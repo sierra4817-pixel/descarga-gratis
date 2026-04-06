@@ -28,14 +28,16 @@
 
     .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; flex: 1; }
 
-    /* Cabecera ultra-simple */
-    header { text-align: center; margin-bottom: 40px; }
-    .logo-text { font-weight: 900; letter-spacing: 2px; color: var(--gold); font-size: 20px; }
+    /* Cabecera con Logo */
+    header { text-align: center; margin-bottom: 40px; display: flex; flex-direction: column; align-items: center; gap: 15px; }
+    .logo-img { max-width: 80px; height: auto; border-radius: 50%; border: 2px solid var(--gold); padding: 5px; background: rgba(255,255,255,0.02); }
+    .logo-text { font-weight: 900; letter-spacing: 2px; color: var(--gold); font-size: 22px; text-transform: uppercase; }
 
     /* Sección Principal */
     .hero { text-align: center; margin-bottom: 50px; }
-    h1 { font-size: 38px; margin-bottom: 15px; line-height: 1.2; }
-    .subtitle { color: var(--muted); font-size: 18px; margin-bottom: 30px; }
+    h1 { font-size: 42px; margin-bottom: 15px; line-height: 1.1; letter-spacing: -1px; }
+    h1 span { color: var(--gold); }
+    .subtitle { color: var(--muted); font-size: 19px; margin-bottom: 30px; }
 
     /* Caja de descarga (Donde ocurre la magia) */
     .download-box {
@@ -51,9 +53,9 @@
     }
 
     /* Imagen o Icono de la Guía */
-    .guide-icon {
+    .guide-preview {
       background: linear-gradient(135deg, #1a1c24 0%, #05050a 100%);
-      height: 250px;
+      height: 280px;
       border-radius: 12px;
       border: 1px solid var(--gold);
       display: flex;
@@ -61,12 +63,14 @@
       justify-content: center;
       align-items: center;
       box-shadow: 0 10px 30px rgba(201,162,39,0.1);
+      position: relative;
     }
+    .guide-logo-inner { max-width: 60px; margin-bottom: 15px; }
 
     /* Formulario */
     form { display: grid; gap: 15px; }
     input {
-      padding: 15px;
+      padding: 16px;
       border-radius: 10px;
       border: 1px solid rgba(255,255,255,0.1);
       background: rgba(255,255,255,0.05);
@@ -101,9 +105,10 @@
 
     /* Responsive */
     @media (max-width: 700px) {
-      .download-box { grid-template-columns: 1fr; padding: 25px; }
-      h1 { font-size: 28px; }
-      .guide-icon { height: 180px; }
+      .download-box { grid-template-columns: 1fr; padding: 25px; gap: 25px; }
+      h1 { font-size: 32px; }
+      .guide-preview { height: 200px; }
+      .logo-img { max-width: 60px; }
     }
   </style>
 </head>
@@ -111,27 +116,28 @@
 
   <div class="container">
     <header>
+      <img src="https://i.ibb.co/image-png-a1ffba4f-441c-462f-b318-2d79a36ebcb3.png" alt="Logo Código Alfa" class="logo-img">
       <div class="logo-text">CÓDIGO ALFA</div>
     </header>
 
     <main>
       <div class="hero">
-        <h1>Tu Guía Gratuita está lista</h1>
-        <p class="subtitle">Aprende los 3 pilares de la disciplina inquebrantable hoy mismo.</p>
+        <h1>Tu acceso a<br><span>CÓDIGO ALFA VIP</span> está listo</h1>
+        <p class="subtitle">Aprende los pilares de la disciplina inquebrantable hoy mismo.</p>
       </div>
 
       <div class="download-box">
-        <div class="guide-icon">
-          <div style="font-size: 40px; margin-bottom: 10px;">🛡️</div>
-          <div style="font-weight: 900; letter-spacing: 1px;">GUÍA ALFA</div>
-          <div style="font-size: 12px; opacity: 0.6; margin-top: 5px;">PDF DESCARGABLE</div>
+        <div class="guide-preview">
+          <img src="https://i.ibb.co/image-png-a1ffba4f-441c-462f-b318-2d79a36ebcb3.png" alt="Código Alfa VIP" class="guide-logo-inner">
+          <div style="font-weight: 900; letter-spacing: 1px; color: var(--gold);">GUÍA ALFA VIP</div>
+          <div style="font-size: 12px; opacity: 0.6; margin-top: 5px; text-transform: uppercase;">Pdf Digital</div>
         </div>
 
         <div class="form-container">
           <form action="#" method="POST">
             <input type="text" placeholder="Tu nombre" required>
             <input type="email" placeholder="Tu mejor correo electrónico" required>
-            <button type="submit" class="btn">Recibir Guía Ahora</button>
+            <button type="submit" class="btn">Recibir Acceso VIP Ahora</button>
             <p style="font-size: 12px; color: var(--muted); text-align: center; margin-top: 10px;">
               Envío instantáneo por email.
             </p>
