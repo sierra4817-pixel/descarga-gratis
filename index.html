@@ -1,135 +1,642 @@
-<!DOCTYPE html>
+html
+<!doctype html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page - Domina Tu Camino</title>
-    <style>
-        /* Estilos Generales */
-        body {
-            background-color: #000000;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            font-family: 'Arial', sans-serif;
-            color: #ffffff;
-        }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Descarga gratis CÓDIGO ALFA VIP: arquitectura de poder, disciplina y dominio mental para el 1%." />
+  <title>CÓDIGO ALFA VIP — Acceso Privado | Albert Sierra</title>
 
-        /* Contenedor Principal */
-        .card {
-            background-color: #0a0a0a;
-            border: 1px solid #d4af37; /* Borde dorado fino */
-            border-radius: 20px;
-            padding: 40px 25px;
-            max-width: 400px;
-            width: 90%;
-            text-align: center;
-            box-shadow: 0px 10px 30px rgba(0,0,0,0.5);
-        }
+  <style>
+    :root{
+      --bg:#05050A;
+      --panel:#0E1016;
+      --panel2:#0A0C12;
+      --text:#EEF0F6;
+      --muted:#A6AEC0;
+      --line:#1B2130;
+      --gold:#C9A227;
+      --good:#34D399;
+      --shadow: 0 18px 55px rgba(0,0,0,.55);
+      --radius: 18px;
+      --max: 1120px;
+      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    }
 
-        /* Etiqueta Superior */
-        .badge {
-            background-color: #c5a03d;
-            color: #000;
-            font-size: 12px;
-            font-weight: bold;
-            padding: 6px 15px;
-            border-radius: 20px;
-            display: inline-block;
-            margin-bottom: 25px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:var(--font);
+      color:var(--text);
+      background:
+        radial-gradient(1100px 560px at 18% 0%, rgba(201,162,39,.18), transparent 60%),
+        radial-gradient(900px 520px at 90% 8%, rgba(90,160,255,.12), transparent 58%),
+        radial-gradient(700px 460px at 55% 100%, rgba(52,211,153,.08), transparent 60%),
+        linear-gradient(180deg, #04040A, #05050A 35%, #04040B);
+      line-height:1.45;
+    }
 
-        /* Títulos */
-        h1 {
-            color: #d4af37;
-            font-size: 28px;
-            margin: 0 0 20px 0;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:22px}
 
-        p {
-            font-size: 15px;
-            line-height: 1.5;
-            color: #cccccc;
-            margin-bottom: 30px;
-        }
+    /* Top bar */
+    .topbar{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(10px);
+      background: rgba(5,5,10,.62);
+      border-bottom: 1px solid rgba(27,33,48,.75);
+    }
+    .topbar .wrap{
+      display:flex; align-items:center; justify-content:space-between; gap:14px;
+      padding-top:14px; padding-bottom:14px;
+    }
+    .brand{display:flex; align-items:center; gap:10px; font-weight:750; letter-spacing:.2px}
+    .logo{
+      width:38px; height:38px; border-radius:14px;
+      background: linear-gradient(135deg, rgba(201,162,39,.95), rgba(201,162,39,.12));
+      border:1px solid rgba(201,162,39,.35);
+      box-shadow: 0 16px 30px rgba(201,162,39,.16);
+    }
+    .nav{display:flex; gap:10px; color:var(--muted); font-size:14px}
+    .nav a{padding:9px 10px; border-radius:12px}
+    .nav a:hover{background: rgba(255,255,255,.04); color: var(--text)}
 
-        p strong {
-            color: #ffffff;
-        }
+    /* Buttons */
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px; padding:12px 16px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      color: var(--text);
+      font-weight:700;
+      cursor:pointer;
+      transition:.18s ease;
+      white-space:nowrap;
+    }
+    .btn:hover{transform: translateY(-1px); background: rgba(255,255,255,.06)}
+    .btn.primary{
+      border-color: rgba(201,162,39,.55);
+      background: linear-gradient(180deg, rgba(201,162,39,.98), rgba(201,162,39,.72));
+      color:#111;
+      box-shadow: 0 18px 40px rgba(201,162,39,.18);
+    }
+    .btn.primary:hover{filter: brightness(1.03)}
+    .chip{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:7px 10px; border-radius:999px;
+      border:1px solid rgba(201,162,39,.25);
+      background: rgba(201,162,39,.10);
+      color: var(--text);
+      font-size:13px;
+    }
+    .dot{
+      width:8px; height:8px; border-radius:99px;
+      background: var(--good);
+      box-shadow: 0 0 0 4px rgba(52,211,153,.12);
+    }
 
-        /* Formulario */
-        input[type="text"],
-        input[type="email"] {
-            width: 100%;
-            padding: 15px;
-            margin-bottom: 15px;
-            background-color: #1a1a1a;
-            border: 1px solid #333;
-            border-radius: 8px;
-            color: #fff;
-            box-sizing: border-box; /* Asegura que el padding no rompa el ancho */
-            font-size: 16px;
-        }
+    /* Layout */
+    section{padding: 34px 0}
+    .hero{padding: 42px 0 14px}
+    .grid{
+      display:grid; gap:18px;
+      grid-template-columns: 1.2fr .8fr;
+      align-items:stretch;
+    }
 
-        /* Botón */
-        .btn-submit {
-            width: 100%;
-            padding: 15px;
-            background-color: #c5a03d;
-            border: none;
-            border-radius: 8px;
-            color: #000;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            text-transform: uppercase;
-            transition: background 0.3s ease;
-            margin-top: 10px;
-        }
+    /* Typography */
+    h1{
+      margin:14px 0 12px;
+      font-size: 44px;
+      line-height:1.05;
+      letter-spacing:-.6px;
+    }
+    h1 .gold{color:var(--gold)}
+    .sub{
+      margin:0 0 18px;
+      color:var(--muted);
+      font-size:17px;
+      max-width: 66ch;
+    }
 
-        .btn-submit:hover {
-            background-color: #e6bc4b;
-        }
+    /* Panels */
+    .card{
+      background: linear-gradient(180deg, rgba(14,16,22,.85), rgba(10,12,18,.85));
+      border:1px solid rgba(255,255,255,.08);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .cardHead{
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+      padding: 18px 18px 14px;
+      border-bottom:1px solid rgba(255,255,255,.07);
+      background: rgba(255,255,255,.02);
+    }
+    .cardHead h3{margin:0; font-size:16px}
+    .badge{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:7px 10px; border-radius:999px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      color: var(--muted);
+      font-size:12px;
+    }
+    .cardPad{padding:18px}
 
-        /* Pie de página */
-        .footer-text {
-            font-size: 11px;
-            color: #666;
-            margin-top: 25px;
-        }
+    /* Book mock */
+    .book{
+      padding:18px;
+      display:grid; gap:14px;
+    }
+    .bookCover{
+      aspect-ratio: 2 / 3;
+      border-radius: 16px;
+      background:
+        radial-gradient(420px 220px at 30% 10%, rgba(201,162,39,.22), transparent 60%),
+        linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.01)),
+        linear-gradient(180deg, #07070B, #0A0B10);
+      border:1px solid rgba(201,162,39,.25);
+      box-shadow: 0 22px 60px rgba(0,0,0,.6);
+      padding:18px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+    }
+    .bookTitle{
+      font-weight:900;
+      letter-spacing:.6px;
+      font-size: 20px;
+      color: var(--gold);
+      text-transform: uppercase;
+    }
+    .bookSub{
+      margin-top:8px;
+      color: rgba(238,240,246,.92);
+      font-weight:750;
+      line-height:1.2;
+      font-size: 14px;
+    }
+    .bookMeta{
+      color: rgba(166,174,192,.92);
+      font-size: 13px;
+      display:grid; gap:6px;
+    }
+    .line{height:1px; background: rgba(201,162,39,.22); margin:10px 0 6px}
 
-        .lock-icon {
-            margin-right: 5px;
-        }
-    </style>
+    /* Bullets */
+    .bullets{display:grid; gap:10px; margin: 18px 0 20px}
+    .bullet{
+      display:flex; gap:10px; align-items:flex-start;
+      padding:12px 12px; border:1px solid rgba(255,255,255,.07);
+      border-radius: 14px;
+      background: rgba(14,16,22,.55);
+    }
+    .check{
+      width:22px; height:22px; border-radius:7px;
+      display:grid; place-items:center;
+      background: rgba(52,211,153,.14);
+      border:1px solid rgba(52,211,153,.35);
+      color: var(--good);
+      flex: 0 0 22px;
+      margin-top:1px;
+      font-weight:900;
+    }
+    .small{color: var(--muted); font-size:13px; margin-top:2px}
+
+    /* Form */
+    form{display:grid; gap:10px}
+    label{font-size:13px; color: var(--muted)}
+    input{
+      width:100%;
+      padding:12px 12px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+      color: var(--text);
+      outline:none;
+    }
+    input::placeholder{color: rgba(166,174,192,.75)}
+    input:focus{
+      border-color: rgba(201,162,39,.55);
+      box-shadow: 0 0 0 4px rgba(201,162,39,.12);
+    }
+    .micro{color: var(--muted); font-size:12px; margin: 6px 0 0}
+
+    /* Sections */
+    .sectionTitle{font-size:26px; margin:0 0 10px; letter-spacing:-.2px}
+    .sectionSub{color:var(--muted); margin:0 0 18px; max-width: 78ch}
+
+    .cols3{display:grid; grid-template-columns: repeat(3, 1fr); gap:14px}
+    .feature{
+      padding:16px; border-radius: var(--radius);
+      border:1px solid rgba(255,255,255,.08);
+      background: rgba(14,16,22,.52);
+    }
+    .icon{
+      width:38px; height:38px; border-radius:14px;
+      display:grid; place-items:center;
+      border:1px solid rgba(201,162,39,.28);
+      background: rgba(201,162,39,.10);
+      color: var(--gold);
+      font-weight:950;
+    }
+    .feature h4{margin:10px 0 6px}
+    .feature p{margin:0; color: var(--muted); font-size:14px}
+
+    .split{display:grid; grid-template-columns: 1fr 1fr; gap:14px; align-items:start}
+    .steps{display:grid; gap:12px}
+    .step{
+      display:flex; gap:12px;
+      padding:14px; border-radius: var(--radius);
+      border:1px solid rgba(255,255,255,.08);
+      background: rgba(10,12,18,.55);
+    }
+    .num{
+      width:28px; height:28px; border-radius:10px;
+      display:grid; place-items:center;
+      background: rgba(201,162,39,.12);
+      border:1px solid rgba(201,162,39,.35);
+      color: var(--gold);
+      font-weight:900;
+      flex: 0 0 28px;
+      margin-top:1px;
+    }
+    .step b{display:block; margin-bottom:4px}
+    .step span{color: var(--muted); font-size:14px}
+
+    /* FAQ */
+    details{
+      border:1px solid rgba(255,255,255,.08);
+      border-radius: 14px;
+      background: rgba(14,16,22,.50);
+      padding: 12px 14px;
+    }
+    summary{cursor:pointer; font-weight:750}
+    details p{color: var(--muted); margin:10px 0 0}
+
+    /* Footer */
+    footer{
+      padding: 28px 0 40px;
+      color: rgba(166,174,192,.85);
+      font-size: 12px;
+      border-top: 1px solid rgba(27,33,48,.8);
+      margin-top: 18px;
+    }
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .grid{grid-template-columns: 1fr}
+      h1{font-size: 38px}
+      .cols3{grid-template-columns: 1fr}
+      .split{grid-template-columns: 1fr}
+      .nav{display:none}
+    }
+  </style>
 </head>
+
 <body>
-
-    <div class="card">
-        <div class="badge">Acceso Exclusivo</div>
-        
-        <h1>Domina tu<br>camino</h1>
-        
-        <p>Introduce tu email para recibir <strong>GRATIS</strong> el Ebook:<br>
-        <strong>"La Estructura del 1%: El manual para hombres de alto valor"</strong>.</p>
-
-        <form action="#">
-            <input type="text" placeholder="Tu nombre" required>
-            <input type="email" placeholder="Tu mejor correo" required>
-            
-            <button type="submit" class="btn-submit">Enviar Ebook a mi correo</button>
-        </form>
-
-        <div class="footer-text">
-            <span>🔒</span> Tu información es privada. Únete a la comunidad de Código Alfa.
+  <div class="topbar">
+    <div class="wrap">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <div style="font-size:14px; opacity:.9;">CÓDIGO ALFA</div>
+          <div style="font-size:12px; color:var(--muted); margin-top:2px;">Acceso Privado</div>
         </div>
-    </div>
+      </div>
 
+      <div class="nav" aria-label="Navegación">
+        <a href="#que-es">Qué es</a>
+        <a href="#beneficios">Beneficios</a>
+        <a href="#para-quien">Para quién</a>
+        <a href="#faq">FAQ</a>
+      </div>
+
+      <a class="btn primary" href="#descargar">Descargar ahora</a>
+    </div>
+  </div>
+
+  <main class="wrap">
+    <!-- HERO -->
+    <section class="hero" id="descargar">
+      <div class="grid">
+        <div>
+          <div class="chip"><span class="dot" aria-hidden="true"></span> Descarga gratuita — acceso inmediato</div>
+          <h1><span class="gold">CÓDIGO ALFA VIP</span><br/>Arquitectura de Poder, Disciplina y Dominio Mental para el 1%</h1>
+          <p class="sub">
+            No es motivación. Es un sistema. Un manual de entrenamiento mental para hombres que
+            no negocian con su estándar: ejecutan, sostienen presión y construyen autoridad real.
+          </p>
+
+          <div class="bullets" aria-label="Beneficios clave">
+            <div class="bullet">
+              <div class="check" aria-hidden="true">✓</div>
+              <div>
+                <div><b>Disciplina estratégica</b> sin depender de “ganas”.</div>
+                <div class="small">Rutinas de decisión, no rutinas de apariencia.</div>
+              </div>
+            </div>
+
+            <div class="bullet">
+              <div class="check" aria-hidden="true">✓</div>
+              <div>
+                <div><b>Dominio mental bajo presión</b> cuando otros se quiebran.</div>
+                <div class="small">Control emocional sin frialdad falsa.</div>
+              </div>
+            </div>
+
+            <div class="bullet">
+              <div class="check" aria-hidden="true">✓</div>
+              <div>
+                <div><b>Autoridad personal</b> que se nota antes de hablar.</div>
+                <div class="small">Presencia, límites y enfoque sin agresividad.</div>
+              </div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
+            <a class="btn primary" href="#form">Quiero el acceso</a>
+            <a class="btn" href="#que-es">Ver qué incluye</a>
+          </div>
+          <div class="micro">Acceso inmediato. Sin spam. Puedes salir cuando quieras.</div>
+        </div>
+
+        <!-- RIGHT CARD -->
+        <aside class="card" aria-label="Formulario de descarga">
+          <div class="cardHead">
+            <h3>Obtén el libro — Acceso privado</h3>
+            <div class="badge">Edición estratégica</div>
+          </div>
+
+          <div class="book">
+            <div class="bookCover" role="img" aria-label="Portada conceptual del libro">
+              <div>
+                <div class="bookTitle">CÓDIGO ALFA VIP</div>
+                <div class="bookSub">Arquitectura de Poder, Disciplina y Dominio Mental para el 1%</div>
+                <div class="line"></div>
+                <div style="color: rgba(166,174,192,.9); font-size:12px;">
+                  Edición Estratégica para Líderes de Alto Valor
+                </div>
+              </div>
+              <div class="bookMeta">
+                <div><b>Autor:</b> Albert Sierra</div>
+                <div><b>Formato:</b> PDF digital</div>
+                <div><b>Entrega:</b> inmediata al correo</div>
+              </div>
+            </div>
+
+            <!-- FORM -->
+            <!-- 1) Cambia action por tu servicio (MailerLite/ConvertKit/ActiveCampaign/Google Forms/etc.)
+                 2) O déjalo en "#" si solo quieres maquetación. -->
+            <div class="card" style="box-shadow:none;">
+              <div class="cardPad">
+                <form id="form" action="#" method="post">
+                  <div>
+                    <label for="name">Nombre</label>
+                    <input id="name" name="name" type="text" placeholder="Tu nombre" required />
+                  </div>
+
+                  <div>
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email" placeholder="tuemail@ejemplo.com" required />
+                  </div>
+
+                  <button class="btn primary" type="submit" style="width:100%; padding:13px 16px;">
+                    Descargar CÓDIGO ALFA VIP
+                  </button>
+
+                  <div class="micro">
+                    Al registrarte, aceptas recibir el enlace de descarga y mensajes estratégicos de la marca.
+                    Puedes darte de baja en cualquier momento.
+                  </div>
+                </form>
+              </div>
+            </div>
+
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- WHAT IS -->
+    <section id="que-es">
+      <h2 class="sectionTitle">Qué es (y qué no es)</h2>
+      <p class="sectionSub">
+        <b>CÓDIGO ALFA VIP</b> es una arquitectura mental: principios operativos, decisiones, hábitos y límites que sostienen poder real.
+        No es entretenimiento. No es discurso vacío. Es una estructura aplicable en trabajo, dinero, relaciones y liderazgo personal.
+      </p>
+
+      <div class="cols3">
+        <div class="feature">
+          <div class="icon" aria-hidden="true">I</div>
+          <h4>Identidad operativa</h4>
+          <p>Pasas de “quiero cambiar” a un estándar no negociable: conducta consistente incluso sin motivación.</p>
+        </div>
+        <div class="feature">
+          <div class="icon" aria-hidden="true">D</div>
+          <h4>Disciplina que se sostiene</h4>
+          <p>Sistemas simples para ejecutar a diario: decisiones predefinidas, control de energía y foco.</p>
+        </div>
+        <div class="feature">
+          <div class="icon" aria-hidden="true">A</div>
+          <h4>Autoridad silenciosa</h4>
+          <p>Presencia, límites y calma. No necesitas gritar para imponer respeto.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- BENEFITS -->
+    <section id="beneficios">
+      <h2 class="sectionTitle">Lo que obtienes al descargarlo</h2>
+      <p class="sectionSub">
+        Beneficios concretos. Sin promesas infantiles. Si lo aplicas, tu conducta cambia. Y tu entorno lo nota.
+      </p>
+
+      <div class="split">
+        <div class="card">
+          <div class="cardPad">
+            <ul style="margin:0; padding:0; list-style:none; display:grid; gap:10px;">
+              <li class="bullet" style="margin:0;">
+                <div class="check" aria-hidden="true">✓</div>
+                <div><b>Protocolo de disciplina</b> para ejecutar incluso cansado.</div>
+              </li>
+              <li class="bullet" style="margin:0;">
+                <div class="check" aria-hidden="true">✓</div>
+                <div><b>Control del impulso</b>: cómo no sabotearte cuando estás cerca de ganar.</div>
+              </li>
+              <li class="bullet" style="margin:0;">
+                <div class="check" aria-hidden="true">✓</div>
+                <div><b>Estándares</b> que filtran gente, hábitos y decisiones.</div>
+              </li>
+              <li class="bullet" style="margin:0;">
+                <div class="check" aria-hidden="true">✓</div>
+                <div><b>Marco de poder personal</b>: influencia sin mendigar aprobación.</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="cardPad">
+            <ul style="margin:0; padding:0; list-style:none; display:grid; gap:10px;">
+              <li class="bullet" style="margin:0;">
+                <div class="check" aria-hidden="true">✓</div>
+                <div><b>Dominio emocional</b> en fricción, conflicto y presión.</div>
+              </li>
+              <li class="bullet" style="margin:0;">
+                <div class="check" aria-hidden="true">✓</div>
+                <div><b>Decisión rápida</b>: cómo cortar dudas y ejecutar.</div>
+              </li>
+              <li class="bullet" style="margin:0;">
+                <div class="check" aria-hidden="true">✓</div>
+                <div><b>Autocontrol social</b>: límites sin agresión ni explicaciones largas.</div>
+              </li>
+              <li class="bullet" style="margin:0;">
+                <div class="check" aria-hidden="true">✓</div>
+                <div><b>Plan de aplicación</b> para 14 días con acciones simples y medibles.</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:16px; display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
+        <a class="btn primary" href="#form">Descargar acceso</a>
+        <div class="micro">Si no estás listo para ejecutar, no lo descargues.</div>
+      </div>
+    </section>
+
+    <!-- FOR WHO -->
+    <section id="para-quien">
+      <h2 class="sectionTitle">Para quién es (y para quién no)</h2>
+      <p class="sectionSub">
+        Este material sube el estándar. Eso significa que también expulsa excusas.
+      </p>
+
+      <div class="split">
+        <div class="card">
+          <div class="cardHead">
+            <h3>Es para ti si…</h3>
+            <div class="badge">Selección</div>
+          </div>
+          <div class="cardPad">
+            <div class="steps">
+              <div class="step">
+                <div class="num">1</div>
+                <div><b>Quieres control</b><span> sobre tu conducta, no solo sobre tus resultados.</span></div>
+              </div>
+              <div class="step">
+                <div class="num">2</div>
+                <div><b>Aceptas presión</b><span> y no necesitas que te “mimen” para actuar.</span></div>
+              </div>
+              <div class="step">
+                <div class="num">3</div>
+                <div><b>Buscas estatus real</b><span> construido en hábitos, criterio y presencia.</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="cardHead">
+            <h3>No es para ti si…</h3>
+            <div class="badge">Exclusión</div>
+          </div>
+          <div class="cardPad">
+            <div class="steps">
+              <div class="step">
+                <div class="num">1</div>
+                <div><b>Quieres frases</b><span> bonitas sin práctica real.</span></div>
+              </div>
+              <div class="step">
+                <div class="num">2</div>
+                <div><b>Buscas excusas</b><span> para justificar falta de disciplina.</span></div>
+              </div>
+              <div class="step">
+                <div class="num">3</div>
+                <div><b>Te ofende el estándar</b><span> de responsabilidad total.</span></div>
+              </div>
+            </div>
+
+            <div style="margin-top:14px;">
+              <a class="btn primary" href="#form" style="width:100%;">Acceder al libro</a>
+              <div class="micro">Acceso inmediato por email.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+      <h2 class="sectionTitle">FAQ</h2>
+      <p class="sectionSub">Respuestas directas. Sin rodeos.</p>
+
+      <div style="display:grid; gap:12px; max-width: 820px;">
+        <details>
+          <summary>¿De verdad es gratis?</summary>
+          <p>Sí. Descargas el libro sin costo. El objetivo es darte una muestra real del estándar de la marca.</p>
+        </details>
+
+        <details>
+          <summary>¿Cuándo lo recibo?</summary>
+          <p>Inmediatamente después de registrarte. Si no lo ves, revisa Promociones o Spam.</p>
+        </details>
+
+        <details>
+          <summary>¿Esto es para principiantes?</summary>
+          <p>Funciona para principiantes y avanzados. La diferencia es simple: el que ejecuta, evoluciona más rápido.</p>
+        </details>
+
+        <details>
+          <summary>¿Me vas a llenar de mensajes?</summary>
+          <p>No. Recibirás contenido estratégico y, ocasionalmente, acceso a recursos o ediciones adicionales. Puedes darte de baja cuando quieras.</p>
+        </details>
+      </div>
+
+      <div style="margin-top:18px;">
+        <div class="card">
+          <div class="cardPad" style="display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap;">
+            <div>
+              <div style="font-weight:850; font-size:16px;">Último paso: toma el acceso.</div>
+              <div class="micro">Disciplina primero. Excusas después.</div>
+            </div>
+            <a class="btn primary" href="#form">Descargar CÓDIGO ALFA VIP</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div style="display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;">
+        <div>© <span id="year"></span> Albert Sierra — CÓDIGO ALFA</div>
+        <div style="opacity:.9;">
+          <a href="#" style="text-decoration:underline;">Política de privacidad</a>
+          <span style="opacity:.5;"> · </span>
+          <a href="#" style="text-decoration:underline;">Términos</a>
+        </div>
+      </div>
+      <div style="margin-top:10px; opacity:.9;">
+        Aviso: Este material es educativo. Resultados dependen de tu ejecución, contexto y consistencia.
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // Año automático
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Si quieres, aquí puedes conectar el formulario a un endpoint.
+    // Por defecto, action="#" no envía a ningún lado (solo maquetación).
+    // Ejemplo básico: impedir envío y mostrar alerta:
+    // document.getElementById("form").addEventListener("submit", (e) => {
+    //   e.preventDefault();
+    //   alert("Conecta el action del formulario a tu herramienta de email marketing.");
+    // });
+  </script>
 </body>
 </html>
+```
