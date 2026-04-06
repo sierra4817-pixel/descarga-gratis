@@ -3,159 +3,80 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>CÓDIGO ALFA VIP — Acceso Directo</title>
+  <title>CÓDIGO ALFA VIP — El Estándar Superior</title>
   
   <style>
     :root {
-      --bg: #05050A;
-      --gold: #C9A227;
-      --text: #EEF0F6;
-      --muted: #A6AEC0;
-      --card: #0E1016;
+      --deep-bg: #02060f; /* Azul abisal premium */
+      --card-bg: #050a18;
+      --accent-green: #9dfc52; /* Verde acción de alta visibilidad */
+      --gold: #c5a059;
+      --text-main: #ffffff;
+      --text-dim: #8492a6;
+      --gradient-main: linear-gradient(135deg, #050a18 0%, #02060f 100%);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
     
     body {
-      font-family: system-ui, -apple-system, sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
-      line-height: 1.5;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
+      font-family: 'Inter', -apple-system, system-ui, sans-serif;
+      background-color: var(--deep-bg);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
     }
 
-    .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; flex: 1; }
-
-    /* Cabecera con Logo */
-    header { text-align: center; margin-bottom: 40px; display: flex; flex-direction: column; align-items: center; gap: 15px; }
-    .logo-img { max-width: 80px; height: auto; border-radius: 50%; border: 2px solid var(--gold); padding: 5px; background: rgba(255,255,255,0.02); }
-    .logo-text { font-weight: 900; letter-spacing: 2px; color: var(--gold); font-size: 22px; text-transform: uppercase; }
-
-    /* Sección Principal */
-    .hero { text-align: center; margin-bottom: 50px; }
-    h1 { font-size: 42px; margin-bottom: 15px; line-height: 1.1; letter-spacing: -1px; }
-    h1 span { color: var(--gold); }
-    .subtitle { color: var(--muted); font-size: 19px; margin-bottom: 30px; }
-
-    /* Caja de descarga (Donde ocurre la magia) */
-    .download-box {
-      background: var(--card);
-      border: 1px solid rgba(201, 162, 39, 0.3);
-      border-radius: 20px;
-      padding: 40px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      align-items: center;
+    /* Fondo Dinámico con textura de poder */
+    .bg-texture {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: radial-gradient(circle at 80% 20%, rgba(157, 252, 82, 0.03), transparent 40%),
+                  radial-gradient(circle at 20% 80%, rgba(197, 160, 89, 0.05), transparent 40%);
+      z-index: -1;
     }
 
-    /* Imagen o Icono de la Guía */
-    .guide-preview {
-      background: linear-gradient(135deg, #1a1c24 0%, #05050a 100%);
-      height: 280px;
-      border-radius: 12px;
-      border: 1px solid var(--gold);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      box-shadow: 0 10px 30px rgba(201,162,39,0.1);
-      position: relative;
-    }
-    .guide-logo-inner { max-width: 60px; margin-bottom: 15px; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 60px 24px; }
 
-    /* Formulario */
-    form { display: grid; gap: 15px; }
+    /* Header con Identidad Definida */
+    header { text-align: center; margin-bottom: 80px; }
+    .logo { width: 100px; margin-bottom: 20px; filter: drop-shadow(0 0 10px rgba(197,160,89,0.3)); }
+    .top-label { font-size: 12px; letter-spacing: 5px; color: var(--gold); text-transform: uppercase; font-weight: 700; }
+
+    /* Hero Section - Comunicación Directa */
+    .hero { text-align: center; margin-bottom: 80px; }
+    h1 { font-size: clamp(32px, 7vw, 64px); font-weight: 900; line-height: 1.1; letter-spacing: -2px; margin-bottom: 25px; }
+    .highlight { color: var(--accent-green); }
+    .hero p { font-size: 20px; color: var(--text-dim); max-width: 700px; margin: 0 auto; font-weight: 300; }
+
+    /* Estética de las capturas: Secciones de Beneficios */
+    .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 80px; }
+    .feature-card {
+      background: var(--card-bg); border: 1px solid rgba(255,255,255,0.05);
+      padding: 40px; border-radius: 20px; position: relative; transition: 0.3s;
+    }
+    .feature-card:hover { border-color: var(--accent-green); transform: translateY(-5px); }
+    .feature-card i { font-size: 40px; color: var(--accent-green); display: block; margin-bottom: 20px; }
+    .feature-card h3 { font-size: 22px; margin-bottom: 15px; }
+    .feature-card p { color: var(--text-dim); font-size: 15px; }
+
+    /* El "Vault" (Caja de Captura) */
+    .vault-section {
+      background: var(--gradient-main); border: 1px solid var(--gold);
+      border-radius: 30px; padding: 60px; display: grid; grid-template-columns: 1fr 1fr;
+      gap: 50px; align-items: center; box-shadow: 0 50px 100px rgba(0,0,0,0.5);
+    }
+
+    .book-mockup { width: 100%; border-radius: 10px; box-shadow: 0 20px 50px rgba(0,0,0,0.8); }
+
+    /* Formulario de Alta Conversión */
+    .form-box h2 { font-size: 28px; margin-bottom: 25px; }
+    .input-group { margin-bottom: 20px; }
     input {
-      padding: 16px;
-      border-radius: 10px;
-      border: 1px solid rgba(255,255,255,0.1);
-      background: rgba(255,255,255,0.05);
-      color: white;
-      font-size: 16px;
+      width: 100%; padding: 20px; background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.1); border-radius: 12px;
+      color: white; font-size: 16px; transition: 0.3s;
     }
-    input:focus { border-color: var(--gold); outline: none; background: rgba(255,255,255,0.08); }
+    input:focus { border-color: var(--accent-green); outline: none; background: rgba(157, 252, 82, 0.05); }
 
-    .btn {
-      background: var(--gold);
-      color: black;
-      padding: 18px;
-      border-radius: 10px;
-      border: none;
-      font-weight: 800;
-      font-size: 16px;
-      cursor: pointer;
-      transition: 0.3s;
-      text-transform: uppercase;
-    }
-    .btn:hover { transform: scale(1.02); filter: brightness(1.1); }
-
-    /* Pie de página */
-    footer {
-      text-align: center;
-      padding: 40px 20px;
-      border-top: 1px solid rgba(255,255,255,0.05);
-      font-size: 14px;
-      color: var(--muted);
-    }
-    .contact-email { color: var(--gold); font-weight: bold; margin-top: 10px; display: block; text-decoration: none; }
-
-    /* Responsive */
-    @media (max-width: 700px) {
-      .download-box { grid-template-columns: 1fr; padding: 25px; gap: 25px; }
-      h1 { font-size: 32px; }
-      .guide-preview { height: 200px; }
-      .logo-img { max-width: 60px; }
-    }
-  </style>
-</head>
-<body>
-
-  <div class="container">
-    <header>
-      <img src="https://i.ibb.co/image-png-a1ffba4f-441c-462f-b318-2d79a36ebcb3.png" alt="Logo Código Alfa" class="logo-img">
-      <div class="logo-text">CÓDIGO ALFA</div>
-    </header>
-
-    <main>
-      <div class="hero">
-        <h1>Tu acceso a<br><span>CÓDIGO ALFA VIP</span> está listo</h1>
-        <p class="subtitle">Aprende los pilares de la disciplina inquebrantable hoy mismo.</p>
-      </div>
-
-      <div class="download-box">
-        <div class="guide-preview">
-          <img src="https://i.ibb.co/image-png-a1ffba4f-441c-462f-b318-2d79a36ebcb3.png" alt="Código Alfa VIP" class="guide-logo-inner">
-          <div style="font-weight: 900; letter-spacing: 1px; color: var(--gold);">GUÍA ALFA VIP</div>
-          <div style="font-size: 12px; opacity: 0.6; margin-top: 5px; text-transform: uppercase;">Pdf Digital</div>
-        </div>
-
-        <div class="form-container">
-          <form action="#" method="POST">
-            <input type="text" placeholder="Tu nombre" required>
-            <input type="email" placeholder="Tu mejor correo electrónico" required>
-            <button type="submit" class="btn">Recibir Acceso VIP Ahora</button>
-            <p style="font-size: 12px; color: var(--muted); text-align: center; margin-top: 10px;">
-              Envío instantáneo por email.
-            </p>
-          </form>
-        </div>
-      </div>
-    </main>
-  </div>
-
-  <footer>
-    <p>© <span id="year"></span> Albert Sierra · CÓDIGO ALFA</p>
-    <p>¿Tienes dudas? Escríbenos a:</p>
-    <a href="mailto:codigo.alfa2.3@gmail.com" class="contact-email">codigo.alfa2.3@gmail.com</a>
-  </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-
-</body>
-</html>
+    .btn-action {
+      width: 100%; padding: 22px; background: var(--accent-green);
+      color: #000; border: none; border-radius: 12px; font-weight:
