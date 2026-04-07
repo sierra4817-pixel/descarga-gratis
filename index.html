@@ -3,114 +3,196 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Código Alfa VIP: El Manifiesto del 1%</title>
+    <title>CÓDIGO ALFA | El Despertar del Líder</title>
     <style>
         :root {
-            /* Dorado mejorado con gradiente */
-            --gold-primary: #d4af37;
-            --gold-light: #f1d592;
-            --gold-gradient: linear-gradient(45deg, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
-            --bg-dark: #0a0a0a;
-            --text-silver: #e0e0e0;
-            --accent-gray: #1c1c1c;
+            --bg: #050505;
+            --card: #0d0d0d;
+            --gold: #c5a059; 
+            --gold-dark: #8e6d31;
+            --text: #ffffff;
+            --text-muted: #888888;
         }
 
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
         body {
-            font-family: 'Georgia', serif; /* Tono más autoritario y de "élite" */
-            background-color: var(--bg-dark);
-            color: var(--text-silver);
-            line-height: 1.8;
-            margin: 0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
         }
 
-        .container { max-width: 900px; margin: auto; padding: 40px 20px; }
-
-        header {
-            text-align: center;
-            padding: 80px 20px;
-            background: radial-gradient(circle, #1a1a1a 0%, #0a0a0a 100%);
+        /* Fondo con textura sutil */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 50% 30%, #1a1a1a 0%, #050505 70%);
+            z-index: -1;
         }
 
-        /* Reemplazo y organización de la imagen */
-        .book-cover {
-            width: 320px;
-            height: auto;
-            margin: 20px auto;
-            display: block;
-            border: 1px solid var(--gold-primary);
-            box-shadow: 0 0 30px rgba(212, 175, 55, 0.3); /* Resplandor dorado */
+        .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
+
+        /* HEADER & LOGO */
+        header { text-align: center; margin-bottom: 60px; }
+        .logo { 
+            width: 120px; 
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 10px rgba(197, 160, 89, 0.2));
         }
 
-        h1 {
-            background: var(--gold-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        /* MAIN CONTENT */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .book-section { text-align: center; position: relative; }
+        .book-mockup {
+            width: 100%;
+            max-width: 380px;
+            filter: drop-shadow(20px 20px 50px rgba(0,0,0,0.8));
+            transition: transform 0.5s ease;
+        }
+        .book-mockup:hover { transform: translateY(-10px) rotate(-1deg); }
+
+        /* TEXTO Y FORMULARIO */
+        .content-section h1 {
             font-size: 3.5rem;
-            letter-spacing: 2px;
+            line-height: 1.1;
             margin-bottom: 20px;
             text-transform: uppercase;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: var(--gold-gradient);
-            color: #000;
-            padding: 20px 50px;
-            text-decoration: none;
             font-weight: 900;
-            border-radius: 2px;
-            font-size: 1.3rem;
-            margin-top: 30px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-            transition: all 0.3s ease;
+            letter-spacing: -2px;
+        }
+        .content-section h1 span { color: var(--gold); }
+        
+        .description {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            border-left: 2px solid var(--gold);
+            padding-left: 20px;
         }
 
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+        .optin-card {
+            background: var(--card);
+            padding: 40px;
+            border-radius: 4px;
+            border: 1px solid #1a1a1a;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
         }
 
-        .section-title {
-            color: var(--gold-primary);
-            border-bottom: 2px solid var(--gold-primary);
-            display: inline-block;
-            padding-bottom: 5px;
-            margin-bottom: 25px;
-        }
+        .optin-card h3 { margin-bottom: 25px; font-weight: 400; letter-spacing: 1px; }
 
-        .bonus-box {
-            border: 1px solid var(--gold-primary);
-            padding: 30px;
-            background: linear-gradient(135deg, #1a1a1a 0%, #050505 100%);
-            position: relative;
+        input {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            background: #000;
+            border: 1px solid #222;
+            color: #fff;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        input:focus { border-color: var(--gold); outline: none; }
+
+        .btn-submit {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(45deg, var(--gold-dark), var(--gold));
+            color: #000;
+            border: none;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .btn-submit:hover { transform: scale(1.02); filter: brightness(1.1); }
+
+        /* FOOTER & LEGAL */
+        footer {
+            margin-top: 100px;
+            padding: 40px 0;
+            border-top: 1px solid #111;
+            text-align: center;
+        }
+        .legal-links { margin-bottom: 20px; }
+        .legal-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.8rem;
+            margin: 0 15px;
+            transition: 0.3s;
+        }
+        .legal-links a:hover { color: var(--gold); }
+        
+        .copyright { font-size: 0.75rem; color: #444; margin-top: 20px; text-transform: uppercase; }
+
+        /* RESPONSIVE */
+        @media (max-width: 850px) {
+            .main-grid { grid-template-columns: 1fr; }
+            .content-section { order: 1; text-align: center; }
+            .book-section { order: 2; }
+            .content-section h1 { font-size: 2.5rem; }
+            .description { border-left: none; border-top: 2px solid var(--gold); padding: 20px 0 0 0; }
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <header>
-        <img src="tu_imagen_subida.png" alt="Código Alfa" class="book-cover">
-        
-        <h1>Código Alfa</h1>
-        <p style="font-size: 1.5rem; font-style: italic;">El Manifiesto del 1%</p>
-        <a href="#comprar" class="cta-button">RECLAMA TU LUGAR EN LA ÉLITE</a>
-    </header>
+    <div class="container">
+        <header>
+            <img src="https://i.ibb.co/mD8mK0z6/image.png" alt="Código Alfa Logo" class="logo">
+        </header>
 
-    <div class="section">
-        <h2 class="section-title">La Psicología del Dominio</h2>
-        <p>No estás aquí por casualidad. Estás aquí porque el sistema ya no puede contener tu ambición. <strong>Código Alfa</strong> es la herramienta de reprogramación diseñada para el hombre que exige más de la vida, más de sus negocios y más de sí mismo.</p>
+        <main class="main-grid">
+            <section class="book-section">
+                <img src="https://i.ibb.co/qR8XFzD0/image.png" alt="Código Alfa Libro" class="book-mockup">
+            </section>
+
+            <section class="content-section">
+                <h1>CÓDIGO<br><span>ALFA</span></h1>
+                <p class="description">
+                    Domina el poder oculto de los hombres que lo tienen todo. 
+                    Elimina la debilidad y despierta al líder magnético que intimida 
+                    a la competencia y atrae por instinto.
+                </p>
+
+                <div class="optin-card">
+                    <h3>RECLAMAR ACCESO VIP</h3>
+                    <form action="#" method="POST">
+                        <input type="text" name="name" placeholder="Tu nombre" required>
+                        <input type="email" name="email" placeholder="Tu correo principal" required>
+                        <button type="submit" class="btn-submit">Descargar Manual</button>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="legal-links">
+                <a href="#privacidad">Política de Privacidad</a>
+                <a href="#terminos">Términos de Uso</a>
+                <a href="#descargo">Descargo de Responsabilidad</a>
+            </div>
+            
+            <div style="max-width: 700px; margin: 0 auto; color: #333; font-size: 11px; line-height: 1.2;">
+                <p><strong>Privacidad:</strong> Tus datos están protegidos bajo protocolos de alta seguridad y solo serán utilizados para enviarte el material solicitado y actualizaciones exclusivas de Código Alfa.</p>
+            </div>
+
+            <p class="copyright">© <span id="year"></span> CÓDIGO ALFA - TODOS LOS DERECHOS RESERVADOS</p>
+            <p style="color: #444; font-size: 10px; margin-top: 10px;">Contacto: codigo.alfa2.3@gmail.com</p>
+        </footer>
     </div>
 
-    <div class="section" id="comprar">
-        <div class="bonus-box">
-            <h3 style="color: var(--gold-light);">OFERTA DE LANZAMIENTO EXCLUSIVA</h3>
-            <p>Accede al manifiesto completo + 3 Masterclasses sobre Libertad Financiera.</p>
-            <p style="font-size: 2.5rem; margin: 10px 0;">$29.00 USD</p>
-            <a href="#" class="cta-button" style="padding: 15px 30px;">DESBLOQUEAR MI ACCESO</a>
-        </div>
-    </div>
-</div>
-
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
