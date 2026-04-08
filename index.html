@@ -1,180 +1,94 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Código Alfa VIP</title>
-
-<style>
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-  background: #000;
-  color: #fff;
-}
-
-/* HERO */
-.hero {
-  position: relative;
-  height: 280px;
-  background: url('https://i.ibb.co/black-gold-marble.jpg') center/cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, transparent, #000 90%);
-}
-
-.hero h1 {
-  position: relative;
-  font-size: 42px;
-  font-weight: 900;
-  letter-spacing: 2px;
-
-  background: linear-gradient(135deg,#f5e2b8,#c9a96a,#fff2cc);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* CONTENIDO */
-.container {
-  max-width: 700px;
-  margin: auto;
-  padding: 30px 20px;
-}
-
-/* TÍTULO */
-.title {
-  font-size: 34px;
-  font-weight: 700;
-  margin-bottom: 20px;
-}
-
-/* PRECIO + AUTOR */
-.meta {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-top: 1px solid #222;
-  border-bottom: 1px solid #222;
-  padding: 15px 0;
-  margin-bottom: 25px;
-}
-
-.price {
-  background: linear-gradient(135deg,#c9a96a,#f5e2b8);
-  color: #000;
-  padding: 6px 14px;
-  font-weight: 700;
-  border-radius: 4px;
-}
-
-.author {
-  opacity: 0.7;
-}
-
-/* TEXTO */
-.text {
-  font-size: 17px;
-  line-height: 1.6;
-  opacity: 0.9;
-}
-
-.list {
-  margin-top: 20px;
-}
-
-.list li {
-  margin-bottom: 10px;
-}
-
-/* BOTÓN */
-.cta {
-  margin-top: 30px;
-}
-
-.cta button {
-  width: 100%;
-  padding: 18px;
-  border: none;
-  font-weight: 800;
-  letter-spacing: 1px;
-  cursor: pointer;
-  border-radius: 8px;
-
-  background: linear-gradient(135deg,#f5e2b8,#c9a96a,#a67c2e,#fff2cc);
-  color: #000;
-
-  box-shadow:
-    inset 0 2px 4px rgba(255,255,255,0.5),
-    inset 0 -3px 6px rgba(0,0,0,0.4),
-    0 10px 30px rgba(197,160,89,0.3);
-
-  transition: 0.3s;
-}
-
-.cta button:hover {
-  transform: translateY(-2px);
-}
-
-/* URGENCIA */
-.urgency {
-  margin-top: 12px;
-  font-size: 13px;
-  opacity: 0.6;
-  text-align: center;
-}
-
-/* RESPONSIVE */
-@media(max-width:600px){
-  .title { font-size: 28px; }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orquestador Bimodal - Panel de Control</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            display: flex;
+            justify-content: center;
+            padding: 40px;
+        }
+        .container {
+            max-width: 800px;
+            background: #1e1e1e;
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid #bfa100; /* Dorado sutil al estilo Código Alfa */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        h1 {
+            color: #ffd700;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .status-box {
+            background: #2a2a2a;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 5px solid #ffd700;
+        }
+        .model-selector {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin: 25px 0;
+        }
+        .btn {
+            padding: 10px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .btn-openai { background-color: #10a37f; color: white; }
+        .btn-gemini { background-color: #1a73e8; color: white; }
+        .btn:hover { opacity: 0.8; transform: translateY(-2px); }
+        ul { line-height: 1.6; }
+        footer {
+            text-align: center;
+            font-size: 0.8em;
+            margin-top: 30px;
+            color: #777;
+        }
+    </style>
 </head>
-
 <body>
 
-<!-- HERO -->
-<div class="hero">
-  <h1>CÓDIGO ALFA VIP</h1>
-</div>
-
 <div class="container">
+    <h1>Orquestador Bimodal</h1>
+    <p style="text-align: center; font-style: italic;">El Manifiesto del Prompting Eficaz</p>
+    
+    <div class="status-box">
+        <strong>Estado del Agente:</strong> Listo para procesar instrucciones.
+    </div>
 
-  <div class="title">
-    El Código Alfa VIP: Manifiesto del 1%
-  </div>
+    <h3>Misión del Sistema</h3>
+    <ul>
+        <li><strong>Ruteo Inteligente:</strong> Adaptación de prompts para GPT-5 o Gemini 2.5/Ultra.</li>
+        <li><strong>Análisis Documental:</strong> Basado en guías oficiales de OpenAI y Google AI.</li>
+        <li><strong>Validación:</strong> Control de calidad mediante Checklist de 6 puntos.</li>
+    </ul>
 
-  <div class="meta">
-    <div class="price">$0+</div>
-    <div class="author">Código Alfa</div>
-  </div>
+    <div class="model-selector">
+        <button class="btn btn-openai">Configurar para ChatGPT</button>
+        <button class="btn btn-gemini">Configurar para Gemini</button>
+    </div>
 
-  <div class="text">
-    Vivimos en una era de mediocridad estandarizada. Este no es contenido para entretenerte.
-    Es un sistema diseñado para quienes han decidido dejar de competir y empezar a dominar.
-  </div>
+    <div style="background: #000; padding: 20px; border-radius: 5px; font-family: monospace;">
+        <span style="color: #ffd700;">[SISTEMA]:</span> ¿Deseas usar ChatGPT o Gemini para tu siguiente prompt?
+    </div>
 
-  <ul class="list">
-    <li>🧠 Psicología del 1%: elimina miedo y duda</li>
-    <li>📈 Estrategia financiera: piensa como inversor</li>
-    <li>🛡️ Disciplina extrema: control total</li>
-    <li>🤝 Estatus y poder: entra en círculos altos</li>
-  </ul>
-
-  <div class="cta">
-    <button>DESCARGAR ACCESO VIP</button>
-  </div>
-
-  <div class="urgency">
-    ⏳ Acceso limitado hoy · +1,284 descargas
-  </div>
-
+    <footer>
+        &copy; 2026 Orquestador Bimodal - Especialista en Ingeniería de Prompts
+    </footer>
 </div>
 
 </body>
