@@ -1,12 +1,221 @@
-<!-- FORMULARIO (YA CONECTADO + REDIRECCIÓN) -->
-<form action="https://gmail.usX.list-manage.com/subscribe/post?u=TU_ID&id=TU_LISTA" method="POST">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CÓDIGO ALFA VIP | El Manifiesto del 1%</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+    --negro-absoluto:#000;
+    --negro-card:#0a0a0a;
+    --dorado-alfa:#C5A059;
+    --dorado-brillante:#e2c28d;
+    --gris-texto:#cccccc;
+    --blanco:#ffffff;
+}
+body{
+    font-family:'Roboto',sans-serif;
+    background-color:var(--negro-absoluto);
+    color:var(--gris-texto);
+    margin:0;
+    line-height:1.6;
+}
+h1,h2,h3{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:2px;color:var(--blanco);text-align:center;}
+/* Hero */
+.hero{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop');
+    background-size:cover;
+    background-position:center;
+    border-bottom:2px solid var(--dorado-alfa);
+    padding:20px;
+    text-align:center;
+}
+.gold-text{color:var(--dorado-alfa); font-weight:bold;}
+.headline{
+    font-size:4rem;
+    margin:10px 0;
+    text-shadow:2px 2px 10px rgba(0,0,0,0.5);
+}
+.subheadline{
+    font-size:1.5rem;
+    max-width:800px;
+    margin-bottom:40px;
+    font-weight:300;
+}
+/* Botón */
+.cta-main{
+    background:linear-gradient(45deg, var(--dorado-alfa), var(--dorado-brillante));
+    color:black;
+    padding:22px 45px;
+    font-family:'Oswald',sans-serif;
+    font-size:1.4rem;
+    text-decoration:none;
+    font-weight:bold;
+    border-radius:2px;
+    transition:0.3s all;
+    box-shadow:0 0 20px rgba(197,160,89,0.3);
+}
+.cta-main:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 30px rgba(197,160,89,0.5);
+}
+/* Contenedor general */
+.container{
+    max-width:1100px;
+    margin:0 auto;
+    padding:80px 20px;
+}
+.intro-text{
+    font-size:1.2rem;
+    text-align:center;
+    max-width:800px;
+    margin:0 auto 60px;
+    border-left:3px solid var(--dorado-alfa);
+    padding-left:20px;
+}
+/* Capítulos Grid */
+.chapters-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
+}
+.chapter-card{
+    background-color:var(--negro-card);
+    border:1px solid #1a1a1a;
+    padding:40px;
+    transition:0.4s;
+    position:relative;
+    overflow:hidden;
+}
+.chapter-card:hover{
+    border-color:var(--dorado-alfa);
+    background-color:#0f0f0f;
+}
+.chapter-number{color:var(--dorado-alfa);font-family:'Oswald',sans-serif;font-size:1rem;}
+.chapter-card h3{margin:15px 0;font-size:1.6rem;color:var(--dorado-alfa);text-align:left;}
+.manifiesto-box{
+    background:#050505;
+    padding:60px;
+    border-radius:4px;
+    margin-top:50px;
+    text-align:center;
+    border:2px solid var(--dorado-alfa);
+    box-shadow:0 0 30px rgba(197,160,89,0.4);
+}
+/* Formulario de captura */
+#vault{
+    margin-top:50px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+#vault input[type="text"], #vault input[type="email"]{
+    width:100%;
+    max-width:400px;
+    margin-bottom:20px;
+    padding:15px 10px;
+    background:transparent;
+    border:none;
+    border-bottom:2px solid var(--dorado-alfa);
+    color:#fff;
+    font-size:1rem;
+}
+#vault input::placeholder{color:#bbb;}
+#vault button{
+    background:var(--dorado-alfa);
+    color:#000;
+    font-weight:bold;
+    padding:15px 35px;
+    font-size:1.1rem;
+    border:none;
+    cursor:pointer;
+    transition:0.3s;
+}
+#vault button:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 20px rgba(197,160,89,0.7);
+}
+/* Footer */
+footer{
+    padding:60px 20px;
+    text-align:center;
+    border-top:1px solid #111;
+    font-size:0.8rem;
+    color:#444;
+}
+@media(max-width:768px){
+    .headline{font-size:2.5rem;}
+    .subheadline{font-size:1.1rem;}
+}
+</style>
+</head>
+<body>
 
+<section class="hero">
+<p class="gold-text">EL 1% NO COMPITE, DOMINA</p>
+<h1 class="headline">CÓDIGO ALFA VIP</h1>
+<p class="subheadline">El manifiesto de poder y la hoja de ruta táctica para el hombre que ha decidido cruzar la línea hacia la excelencia absoluta.</p>
+<a href="#vault" class="cta-main">DESCARGAR EL MANIFIESTO DEL 1%</a>
+</section>
+
+<div class="container">
+<div class="intro-text">
+"La mayoría vive en silencio, compitiendo por las sobras, reaccionando al mundo en lugar de crearlo. Pero tú no eres la mayoría."
+</div>
+
+<h2>Pilares del Dominio</h2>
+<div class="chapters-grid">
+<div class="chapter-card">
+<span class="chapter-number">CAPÍTULO 1</span>
+<h3>Mentalidad del 1%</h3>
+<p>Reprograma tu mente para eliminar el miedo y la duda. Deja de ser un "Participante" que reacciona al destino y conviértete en el "Arquitecto" que lo diseña.</p>
+</div>
+<div class="chapter-card">
+<span class="chapter-number">CAPÍTULO 2</span>
+<h3>Disciplina de Acero</h3>
+<p>La motivación es una mentira volátil. Necesitas Ingeniería del Comportamiento para construir hábitos que te hagan ganar independientemente de cómo te sientas.</p>
+</div>
+<div class="chapter-card">
+<span class="chapter-number">CAPÍTULO 3</span>
+<h3>Dinero que Obedece</h3>
+<p>El dinero debe ser tu mejor soldado, nunca tu comandante. Aprende la psicología de la riqueza masiva y el poder de la soberanía personal.</p>
+</div>
+<div class="chapter-card">
+<span class="chapter-number">CAPÍTULO 4</span>
+<h3>Presencia Ejecutiva</h3>
+<p>El verdadero poder es silencioso. Domina el arte de entrar en una habitación y tomar la autoridad por derecho natural sin decir una sola palabra.</p>
+</div>
+</div>
+
+<div class="manifiesto-box" id="vault">
+<h2>¿Estás listo para quemar las naves?</h2>
+<p>La competencia es para los que no tienen identidad. El 1% lidera, define las reglas y crea su propio juego.</p>
+
+<!-- MOKAP DEL LIBRO -->
+<div style="margin:30px auto; max-width:250px;">
+<img src="https://via.placeholder.com/250x350?text=Libro+Código+Alfa" alt="Portada Código Alfa VIP" style="width:100%; border:3px solid var(--dorado-brillante); border-radius:5px; box-shadow:0 0 25px rgba(197,160,89,0.5);">
+</div>
+
+<!-- FORMULARIO -->
+<form id="vault" action="https://gmail.usX.list-manage.com/subscribe/post?u=TU_ID&id=TU_LISTA" method="POST">
 <input type="text" name="name" placeholder="Nombre" required>
 <input type="email" name="email" placeholder="Email" required>
-
-<!-- REDIRECCIÓN -->
 <input type="hidden" name="redirect" value="https://tusitio.com/gracias.html">
-
-<button type="submit">DESCARGAR AHORA</button>
-
+<button type="submit">DESCARGAR CÓDIGO ALFA VIP AHORA</button>
+<p style="margin-top:15px; font-size:0.85rem; color:#ccc;">Acceso inmediato. Garantía de 7 días.</p>
 </form>
+</div>
+
+<footer>
+<p>&copy; 2026 CÓDIGO ALFA VIP. AUTOR: ALBERT S.</p>
+<p>No aceptes el guion de la mediocridad. Lidera o desaparece.</p>
+</footer>
+
+</body>
+</html>
