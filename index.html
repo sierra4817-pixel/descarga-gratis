@@ -3,21 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Código Alfa VIP | Domina tu Destino</title>
+    <title>CÓDIGO ALFA VIP | El Manifiesto del 1%</title>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         /* Variables de color estilo Alfa */
         :root {
-            --negro-fondo: #0a0a0a;
-            --dorado: #c5a059;
-            --rojo-alfa: #8b0000;
-            --blanco-texto: #e0e0e0;
+            --negro-fondo: #000000;
+            --dorado-principal: #C5A059;
+            --dorado-oscuro: #967B45;
+            --blanco-texto: #FFFFFF;
+            --gris-suave: #E0E0E0;
         }
 
         body {
             font-family: 'Roboto', sans-serif;
             background-color: var(--negro-fondo);
-            color: var(--blanco-texto);
+            color: var(--gris-suave);
             margin: 0;
             padding: 0;
             line-height: 1.6;
@@ -27,149 +28,190 @@
             font-family: 'Oswald', sans-serif;
             text-transform: uppercase;
             text-align: center;
+            letter-spacing: 1px;
         }
 
         /* Hero Section */
         .hero {
-            padding: 80px 20px;
-            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1350&q=80'); /* Imagen de fondo elegante */
-            background-size: cover;
-            border-bottom: 3px solid var(--dorado);
+            padding: 100px 20px;
+            text-align: center;
+            border-bottom: 2px solid var(--dorado-oscuro);
+        }
+
+        .logo {
+            max-width: 250px;
+            margin-bottom: 30px;
+        }
+
+        .preheadline {
+            font-size: 1rem;
+            color: var(--dorado-principal);
+            margin-bottom: 10px;
+            font-weight: bold;
         }
 
         .headline {
-            font-size: 3rem;
-            color: var(--dorado);
+            font-size: 3.5rem;
+            color: var(--blanco-texto);
+            margin-top: 0;
             margin-bottom: 10px;
         }
 
         .subheadline {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             font-weight: 300;
             max-width: 800px;
-            margin: 0 auto 30px;
+            margin: 0 auto 40px;
+            color: var(--gris-suave);
         }
 
-        /* Botones */
+        /* Botones de Acción */
         .cta-button {
             display: inline-block;
-            background-color: var(--rojo-alfa);
-            color: white;
+            background-color: var(--dorado-principal);
+            color: #000000;
             padding: 20px 40px;
             text-decoration: none;
             font-weight: bold;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             border-radius: 5px;
             transition: transform 0.3s ease, background 0.3s;
-            box-shadow: 0 4px 15px rgba(139, 0, 0, 0.4);
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            box-shadow: 0 4px 15px rgba(197, 160, 89, 0.4);
         }
 
         .cta-button:hover {
             transform: scale(1.05);
-            background-color: #a30000;
+            background-color: var(--dorado-oscuro);
         }
 
         /* Secciones de Contenido */
         .section {
-            padding: 60px 20px;
-            max-width: 1000px;
+            padding: 80px 20px;
+            max-width: 1100px;
             margin: 0 auto;
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            color: var(--blanco-texto);
+            margin-bottom: 50px;
         }
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin-top: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
         }
 
         .card {
-            background: #1a1a1a;
-            padding: 30px;
-            border: 1px solid #333;
+            background: #111111;
+            padding: 40px;
+            border: 1px solid #222;
             border-radius: 8px;
             text-align: center;
+            transition: border-color 0.3s;
         }
 
         .card:hover {
-            border-color: var(--dorado);
+            border-color: var(--dorado-principal);
         }
 
         .card h3 {
-            color: var(--dorado);
+            color: var(--dorado-principal);
+            font-size: 1.8rem;
+            margin-top: 0;
         }
 
-        /* Garantía */
+        .card p {
+            font-size: 1.1rem;
+            color: var(--gris-suave);
+        }
+
+        /* Sección de Garantía */
         .guarantee {
-            background-color: #111;
-            padding: 40px;
+            background-color: #0a0a0a;
+            padding: 60px;
             text-align: center;
-            border: 2px dashed var(--dorado);
-            margin: 40px auto;
+            border: 2px dashed var(--dorado-oscuro);
+            margin: 60px auto;
+            max-width: 800px;
         }
 
+        .guarantee h3 {
+            color: var(--dorado-principal);
+            margin-top: 0;
+        }
+
+        /* Pie de página */
         footer {
             text-align: center;
-            padding: 40px;
-            font-size: 0.8rem;
-            color: #666;
+            padding: 50px 20px;
+            font-size: 0.9rem;
+            color: #555;
+            background-color: #050505;
         }
 
-        /* Responsive */
-        @media (max-width: 600px) {
-            .headline { font-size: 2rem; }
-            .subheadline { font-size: 1.1rem; }
+        /* Adaptación para móviles */
+        @media (max-width: 768px) {
+            .headline { font-size: 2.5rem; }
+            .subheadline { font-size: 1.2rem; }
+            .cta-button { font-size: 1.1rem; padding: 15px 30px; }
+            .section h2 { font-size: 2rem; }
         }
     </style>
 </head>
 <body>
 
     <header class="hero">
-        <h1 class="headline">DEJA DE SER EL ESPECTADOR</h1>
-        <h2 class="subheadline">Domina la psicología del alto valor y conviértete en el hombre que toma el control de su realidad.</h2>
+        <img src="logo-codigo-alfa.png" alt="CÓDIGO ALFA" class="logo">
+        <p class="preheadline">EL 1% NO COMPITE, DOMINA.</p>
+        <h1 class="headline">CÓDIGO ALFA VIP</h1>
+        <h2 class="subheadline">Descarga gratis el mapa mental para dejar de competir y empezar a dominar tu mercado en 2026.</h2>
         <div style="text-align: center;">
-            <a href="#comprar" class="cta-button">¡SÍ, QUIERO ACCESO A CÓDIGO ALFA!</a>
+            <a href="TU_LINK_DE_HOTMART_AQUI" class="cta-button">¡QUIERO MI ACCESO GRATUITO AL MANIFIESTO!</a>
         </div>
     </header>
 
-    <section class="section">
-        <h2>Lo que descubrirás en el interior:</h2>
+    <section class="section" id="beneficios">
+        <h2>¿Qué encontrarás dentro del Manifiesto?</h2>
         <div class="grid">
             <div class="card">
-                <h3>Psicología de Alto Valor</h3>
-                <p>Aprende por qué el 1% de los hombres atrae el 99% de las oportunidades.</p>
-            </div>
-            <div class="card">
-                <h3>Lenguaje No Verbal</h3>
-                <p>Domina tu postura y mirada para proyectar autoridad sin decir una sola palabra.</p>
+                <h3>Mindset de Acero</h3>
+                <p>Reprograma tu mente para el éxito financiero y personal sin excusas.</p>
             </div>
             <div class="card">
                 <h3>Dinámicas de Poder</h3>
-                <p>Cómo leer las intenciones de los demás y mantener siempre el marco de la interacción.</p>
+                <p>Domina el marco de cualquier interacción social y profesional.</p>
+            </div>
+            <div class="card">
+                <h3>Lectura Mental</h3>
+                <p>Aprende a leer el lenguaje no verbal y anticiparte a los demás.</p>
             </div>
         </div>
     </section>
 
-    <section class="section" style="background-color: #0d0d0d;">
-        <h2 style="color: var(--dorado);">¿ESTÁS LISTO PARA EL CAMBIO?</h2>
-        <p style="text-align: center; max-width: 700px; margin: 0 auto;">
-            El conocimiento que compartimos en <strong>Código Alfa VIP</strong> no es para todos. Es para el hombre que está cansado de las excusas y está dispuesto a invertir en su mejor versión.
+    <section class="section" style="background-color: #050505;">
+        <h2 style="color: var(--dorado-principal);">¿ESTÁS LISTO PARA EL CAMBIO?</h2>
+        <p style="text-align: center; max-width: 700px; margin: 0 auto; font-size: 1.2rem;">
+            El conocimiento que compartimos en <strong>CÓDIGO ALFA VIP</strong> no es para todos. Es solo para el hombre que ha decidido dejar de ser un espectador y convertirse en el protagonista de su propia vida.
         </p>
-        <div style="text-align: center; margin-top: 40px;">
-            <a href="TU_LINK_DE_HOTMART_AQUI" class="cta-button">ADQUIRIR EL EBOOK POR $XX.XX</a>
+        <div style="text-align: center; margin-top: 50px;">
+            <a href="TU_LINK_DE_HOTMART_AQUI" class="cta-button">ADQUIRIR EL EBOOK POR SOLO $XX.XX</a>
         </div>
     </section>
 
     <section class="section">
         <div class="guarantee">
-            <h3 style="margin-top:0;">Garantía de Satisfacción</h3>
-            <p>Tienes 7 días para probar el material. Si no sientes que tu mentalidad ha dado un salto al siguiente nivel, te devolvemos tu inversión sin preguntas.</p>
+            <h3 style="margin-top:0; font-size: 2rem;">Garantía de Satisfacción</h3>
+            <p style="font-size: 1.1rem;">Tienes 7 días completos para probar el material. Si no sientes que tu mentalidad ha dado un salto al siguiente nivel, te devolvemos tu inversión sin preguntas. Esta es una inversión sin riesgo para ti.</p>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2024 Código Alfa VIP. Todos los derechos reservados.</p>
-        <p>Este sitio no es parte de Facebook o Instagram. Los resultados varían según la aplicación personal.</p>
+        <p>&copy; 2024 CÓDIGO ALFA VIP. Todos los derechos reservados.</p>
+        <p>Este sitio no es parte de Facebook o Google. Los resultados mostrados no son típicos y varían según la aplicación personal.</p>
     </footer>
 
 </body>
