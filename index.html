@@ -1,338 +1,254 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CÓDIGO ALFA VIP | La Psicología del 1%</title>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            /* PALETA DORADO NIVEL DIOS */
-            --oro-puro: #FFD700; /* Oro brillante base */
-            --oro-metalico: #C5A059; /* Oro viejo para contraste */
-            --oro-blanco: #FFFACD; /* Para brillos extremos */
-            --oro-sombra: #967B45; /* Oro oscuro para profundidad */
-            --negro-absoluto: #000000;
-            --gris-oscuro: #0a0a0a;
-            --blanco: #ffffff;
-            --texto: #e0e0e0;
-            
-            /* Degradado Metálico Complejo */
-            --gradient-oro: linear-gradient(135deg, #bf953f 0%, #fcf6ba 20%, #b38728 40%, #fcf6ba 60%, #bf953f 80%, #aa771c 100%);
-            --gradient-oro-btn: linear-gradient(45deg, #aa771c 0%, #fcf6ba 50%, #aa771c 100%);
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CÓDIGO ALFA VIP | El Manifiesto del 1%</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+    --negro-absoluto:#000;
+    --negro-card:#0a0a0a;
+    --gris-texto:#cccccc;
+    --blanco:#ffffff;
+}
 
-        /* Suavizado de scroll */
-        html { scroll-behavior: smooth; }
+/* Gradiente Oro Líquido */
+--oro-liquido: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5e6 75%, #aa771c 100%);
 
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: var(--negro-absoluto);
-            color: var(--texto);
-            margin: 0;
-            line-height: 1.7;
-        }
+/* Efectos */
+.oro-liquid-text{
+    background: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5e6 75%, #aa771c 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 10px rgba(212,175,55,0.5));
+}
 
-        h1, h2, h3 {
-            font-family: 'Oswald', sans-serif;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--blanco);
-            text-wrap: balance;
-            /* Sombra de texto dorada sutil para h1 y h2 */
-            text-shadow: 0 2px 4px rgba(197, 160, 89, 0.3);
-        }
+/* Body y tipografía */
+body{
+    font-family:'Roboto',sans-serif;
+    background-color:var(--negro-absoluto);
+    color:var(--gris-texto);
+    margin:0;
+    line-height:1.6;
+}
+h1,h2,h3{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:2px;text-align:center;}
+/* Hero */
+.hero{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop');
+    background-size:cover;
+    background-position:center;
+    border-bottom:2px solid transparent;
+    border-image: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5e6 75%, #aa771c 100%);
+    border-image-slice:1;
+    padding:20px;
+    text-align:center;
+}
+.gold-text{font-weight:bold; font-size:1.2rem; background: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5e6 75%, #aa771c 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; filter: drop-shadow(0 0 8px rgba(212,175,55,0.5));}
 
-        /* Hero Section - Aumentado el brillo y la sombra dorada inferior */
-        .hero {
-            padding: 140px 20px;
-            text-align: center;
-            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.95)), 
-                        url('https://images.unsplash.com/photo-1554469384-e58fac16e23a?q=80&w=1974&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-            /* Borde inferior con degradado metálico */
-            border-bottom: 3px solid transparent;
-            border-image: var(--gradient-oro) 1;
-            /* Resplandor dorado inferior */
-            box-shadow: 0 10px 50px rgba(197, 160, 89, 0.2);
-        }
+/* Títulos */
+.headline{
+    font-size:4rem;
+    margin:10px 0;
+    text-shadow:2px 2px 10px rgba(0,0,0,0.5);
+}
+.headline.oro-liquid-text{font-size:4rem;}
 
-        /* Dorado Metálico para texto específico */
-        .gold {
-            background: var(--gradient-oro);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            color: transparent;
-            font-weight: 700;
-            /* Brillo externo en el texto dorado */
-            filter: drop-shadow(0 0 5px rgba(252, 246, 186, 0.5));
-        }
+/* Subheadline */
+.subheadline{
+    font-size:1.5rem;
+    max-width:800px;
+    margin-bottom:40px;
+    font-weight:300;
+}
 
-        .headline {
-            font-size: clamp(2.5rem, 8vw, 4.5rem);
-            margin: 0;
-            line-height: 1.1;
-            font-weight: 700;
-        }
+/* Botón */
+.cta-main{
+    background: linear-gradient(45deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5e6 75%, #aa771c 100%);
+    color:black;
+    padding:22px 45px;
+    font-family:'Oswald',sans-serif;
+    font-size:1.4rem;
+    text-decoration:none;
+    font-weight:bold;
+    border-radius:2px;
+    transition:0.3s all;
+    box-shadow:0 0 20px rgba(212,175,55,0.3);
+}
+.cta-main:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 30px rgba(212,175,55,0.5);
+}
 
-        .subheadline {
-            font-size: 1.4rem;
-            max-width: 900px;
-            margin: 25px auto 45px;
-            font-weight: 300;
-        }
+/* Contenedor general */
+.container{
+    max-width:1100px;
+    margin:0 auto;
+    padding:80px 20px;
+}
+.intro-text{
+    font-size:1.2rem;
+    text-align:center;
+    max-width:800px;
+    margin:0 auto 60px;
+    border-left:3px solid transparent;
+    border-image: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5e6 75%, #aa771c 100%);
+    border-image-slice:1;
+    padding-left:20px;
+}
 
-        /* Botón CTA - Degradado metálico con efecto de brillo al pasar el mouse */
-        .cta-btn {
-            display: inline-block;
-            background: var(--gradient-oro-btn);
-            color: black;
-            padding: 22px 55px;
-            text-decoration: none;
-            font-weight: 700;
-            font-family: 'Oswald', sans-serif;
-            font-size: 1.3rem;
-            transition: all 0.4s ease;
-            border-radius: 2px;
-            /* Super resplandor dorado */
-            box-shadow: 0 0 30px rgba(197, 160, 89, 0.6), inset 0 0 10px rgba(255, 250, 205, 0.5);
-            text-transform: uppercase;
-            border: 1px solid var(--oro-blanco);
-            position: relative;
-            overflow: hidden;
-        }
+/* Capítulos Grid */
+.chapters-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
+}
+.chapter-card{
+    background-color:var(--negro-card);
+    border:1px solid #1a1a1a;
+    padding:40px;
+    transition:0.4s;
+    position:relative;
+    overflow:hidden;
+}
+.chapter-card:hover{
+    border:2px solid transparent;
+    border-image: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5e6 75%, #aa771c 100%);
+    border-image-slice:1;
+    background-color:#0f0f0f;
+}
+.chapter-number{font-family:'Oswald',sans-serif;font-size:1rem; background: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5e6 75%, #aa771c 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; filter: drop-shadow(0 0 8px rgba(212,175,55,0.5));}
+.chapter-card h3{margin:15px 0;font-size:1.6rem; text-align:left; background: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5e6 75%, #aa771c 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; filter: drop-shadow(0 0 10px rgba(212,175,55,0.5));}
 
-        /* Efecto de 'barrido de luz' en el botón */
-        .cta-btn::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(to bottom right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0) 100%);
-            transform: rotate(45deg);
-            transition: all 0.6s ease;
-            opacity: 0;
-        }
+/* Manifiesto */
+.manifiesto-box{
+    background:#050505;
+    padding:60px;
+    border-radius:4px;
+    margin-top:50px;
+    text-align:center;
+    border:2px solid transparent;
+    border-image: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5e6 75%, #aa771c 100%);
+    border-image-slice:1;
+    box-shadow:0 0 30px rgba(212,175,55,0.4);
+}
 
-        .cta-btn:hover {
-            transform: translateY(-5px) scale(1.03);
-            background: var(--gradient-oro); /* Invertir degradado */
-            box-shadow: 0 15px 50px rgba(197, 160, 89, 0.8), inset 0 0 15px rgba(255, 250, 205, 0.7);
-            color: #000;
-        }
+/* Formulario de captura */
+#vault{
+    margin-top:50px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+#vault input[type="text"], #vault input[type="email"]{
+    width:100%;
+    max-width:400px;
+    margin-bottom:20px;
+    padding:15px 10px;
+    background:transparent;
+    border:none;
+    border-bottom:2px solid transparent;
+    border-image: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5e6 75%, #aa771c 100%);
+    border-image-slice:1;
+    color:#fff;
+    font-size:1rem;
+}
+#vault input::placeholder{color:#bbb;}
+#vault button{
+    background: linear-gradient(45deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5e6 75%, #aa771c 100%);
+    color:#000;
+    font-weight:bold;
+    padding:15px 35px;
+    font-size:1.1rem;
+    border:none;
+    cursor:pointer;
+    transition:0.3s;
+}
+#vault button:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 20px rgba(212,175,55,0.7);
+}
 
-        .cta-btn:hover::after {
-            opacity: 1;
-            left: 100%;
-            top: 100%;
-        }
-
-        /* Secciones */
-        .section {
-            padding: 100px 20px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        /* Caja de Cita - Borde y resplandor intensificados */
-        .quote-box {
-            background: var(--gris-oscuro);
-            padding: 50px;
-            /* Borde izquierdo con degradado metálico intensificado */
-            border-left: 5px solid transparent;
-            border-image: linear-gradient(to bottom, #fcf6ba, #aa771c) 1;
-            font-style: italic;
-            font-size: 1.4rem;
-            margin-bottom: 80px;
-            color: var(--blanco);
-            /* Sombra proyectada dorada */
-            box-shadow: 15px 15px 40px rgba(0,0,0,0.7), 0 0 20px rgba(197, 160, 89, 0.15);
-            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
-        }
-
-        /* Grid de Capítulos */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 35px;
-        }
-
-        /* Tarjetas - Efecto de borde dorado neón al pasar el mouse */
-        .card {
-            background: #080808; /* Más negro */
-            padding: 45px;
-            border: 1px solid #1a1a1a;
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            display: flex;
-            flex-direction: column;
-            position: relative;
-        }
-
-        .card:hover { 
-            /* Borde dorado metálico */
-            border-color: transparent;
-            border-image: var(--gradient-oro) 1;
-            transform: translateY(-8px);
-            background: #101010;
-            /* Resplandor externo dorado */
-            box-shadow: 0 15px 40px rgba(197, 160, 89, 0.25);
-        }
-        
-        /* Brillo sutil en la esquina superior de la tarjeta al hacer hover */
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle at 0% 0%, rgba(252, 246, 186, 0.1) 0%, rgba(0,0,0,0) 50%);
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-        
-        .card:hover::before {
-            opacity: 1;
-        }
-
-        .card h3 { 
-            /* Título de la tarjeta con dorado metálico */
-            background: var(--gradient-oro);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            color: transparent;
-            margin-top: 0;
-            font-size: 1.5rem;
-            filter: drop-shadow(0 1px 1px rgba(0,0,0,0.5));
-        }
-
-        /* Lista de Puntos Clave */
-        .feature-list {
-            list-style: none;
-            padding: 0;
-            margin: 40px 0;
-        }
-
-        .feature-list li {
-            padding: 18px 0;
-            border-bottom: 1px solid #1a1a1a;
-            display: flex;
-            align-items: flex-start;
-            font-size: 1.1rem;
-        }
-
-        /* Checkmark dorado brillante */
-        .feature-list li::before {
-            content: "✓";
-            color: var(--oro-puro);
-            margin-right: 20px;
-            font-weight: bold;
-            font-size: 1.3rem;
-            /* Brillo en el checkmark */
-            text-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
-        }
-
-        /* Caja de Compra Final - Ultra Dorada */
-        .final-buy-box {
-            text-align: center; 
-            margin-top: 80px; 
-            padding: 70px 30px; 
-            background: #050505; 
-            /* Borde completo metálico degradado */
-            border: 2px solid transparent;
-            border-image: var(--gradient-oro) 1;
-            /* Gran resplandor dorado de fondo */
-            box-shadow: 0 0 60px rgba(197, 160, 89, 0.3), inset 0 0 20px rgba(197, 160, 89, 0.1);
-            position: relative;
-        }
-        
-        /* Brillo central de fondo en la caja de compra */
-        .final-buy-box::before {
-            content: '';
-            position: absolute;
-            top: 50%; left: 50%; transform: translate(-50%, -50%);
-            width: 80%; height: 80%;
-            background: radial-gradient(circle, rgba(197, 160, 89, 0.1) 0%, rgba(0,0,0,0) 70%);
-            z-index: 0;
-        }
-        
-        .final-buy-box * { position: relative; z-index: 1; }
-
-        footer {
-            padding: 80px 20px;
-            text-align: center;
-            border-top: 1px solid transparent;
-            border-image: linear-gradient(to right, transparent, var(--oro-sombra), transparent) 1;
-            font-size: 0.9rem;
-            color: #777;
-            background: #050505;
-        }
-
-        @media (max-width: 600px) {
-            .section { padding: 60px 20px; }
-            .quote-box { padding: 30px; font-size: 1.1rem; }
-            .hero { padding: 100px 20px; }
-        }
-    </style>
+/* Footer */
+footer{
+    padding:60px 20px;
+    text-align:center;
+    border-top:1px solid #111;
+    font-size:0.8rem;
+    color:#444;
+}
+@media(max-width:768px){
+    .headline{font-size:2.5rem;}
+    .subheadline{font-size:1.1rem;}
+}
+</style>
 </head>
 <body>
 
-    <header class="hero">
-        <h1 class="headline">CÓDIGO <span class="gold">ALFA VIP</span></h1>
-        <p class="subheadline">La Psicología del 1% que <span class="gold">no compite, lidera</span>. El manifiesto definitivo para el hombre que busca la excelencia absoluta.</p>
-        <a href="#comprar" class="cta-btn">Unirse al Círculo</a>
-    </header>
+<section class="hero">
+<p class="gold-text">EL 1% NO COMPITE, DOMINA</p>
+<h1 class="headline oro-liquid-text">CÓDIGO ALFA VIP</h1>
+<p class="subheadline">El manifiesto de poder y la hoja de ruta táctica para el hombre que ha decidido cruzar la línea hacia la excelencia absoluta.</p>
+<a href="#vault" class="cta-main">DESCARGAR EL MANIFIESTO DEL 1%</a>
+</section>
 
-    <main class="section">
-        <div class="quote-box">
-            "Al hombre moderno se le ha vendido una mentira: que debe disculparse por su ambición... La mayoría vive en silencio, compitiendo por las sobras."
-        </div>
+<div class="container">
+<div class="intro-text">
+"La mayoría vive en silencio, compitiendo por las sobras, reaccionando al mundo en lugar de crearlo. Pero tú no eres la mayoría."
+</div>
 
-        <h2 style="text-align: center; margin-bottom: 50px;">La Hoja de Ruta Táctica</h2>
-        <p style="text-align: center; font-size: 1.2rem; margin-bottom: 50px;">Este libro deconstruye los mitos que mantienen a los hombres débiles y presenta los pilares de la élite mundial:</p>
-        
-        <div class="grid">
-            <div class="card">
-                <h3>Capítulo 1: El Despertar</h3>
-                <p>Quema el mapa que te dieron al nacer. Pasa de ser un "Participante" que reacciona a ser un "Arquitecto" que diseña su realidad.</p>
-            </div>
-            <div class="card">
-                <h3>Capítulo 2: Disciplina</h3>
-                <p>La motivación es una mentira. Necesitas Ingeniería del Comportamiento y rituales de mañana en "Modo Ofensivo".</p>
-            </div>
-            <div class="card">
-                <h3>Capítulo 3: Riqueza</h3>
-                <p>El dinero es un amplificador. Aprende a ser su comandante y no su esclavo. Entiende que tú eres el activo principal.</p>
-            </div>
-            <div class="card">
-                <h3>Capítulo 4: Presencia</h3>
-                <p>Domina el silencio estratégico. El poder real es una fuerza gravitacional que no necesita pedir atención.</p>
-            </div>
-        </div>
+<h2>Pilares del Dominio</h2>
+<div class="chapters-grid">
+<div class="chapter-card">
+<span class="chapter-number">CAPÍTULO 1</span>
+<h3>Mentalidad del 1%</h3>
+<p>Reprograma tu mente para eliminar el miedo y la duda. Deja de ser un "Participante" que reacciona al destino y conviértete en el "Arquitecto" que lo diseña.</p>
+</div>
+<div class="chapter-card">
+<span class="chapter-number">CAPÍTULO 2</span>
+<h3>Disciplina de Acero</h3>
+<p>La motivación es una mentira volátil. Necesitas Ingeniería del Comportamiento para construir hábitos que te hagan ganar independientemente de cómo te sientas.</p>
+</div>
+<div class="chapter-card">
+<span class="chapter-number">CAPÍTULO 3</span>
+<h3>Dinero que Obedece</h3>
+<p>El dinero debe ser tu mejor soldado, nunca tu comandante. Aprende la psicología de la riqueza masiva y el poder de la soberanía personal.</p>
+</div>
+<div class="chapter-card">
+<span class="chapter-number">CAPÍTULO 4</span>
+<h3>Presencia Ejecutiva</h3>
+<p>El verdadero poder es silencioso. Domina el arte de entrar en una habitación y tomar la autoridad por derecho natural sin decir una sola palabra.</p>
+</div>
+</div>
 
-        <h2 style="margin-top: 100px; text-align: center;">Lo que vas a dominar</h2>
-        <ul class="feature-list">
-            <li><span><strong>Monopolio Personal:</strong> Deja de ser una mercancía intercambiable y haz que la competencia sea irrelevante.</span></li>
-            <li><span><strong>Autoimagen de Élite:</strong> Ajusta tu termostato mental para que el éxito sea el resultado inevitable de tu identidad.</span></li>
-            <li><span><strong>Silencio Estratégico:</strong> Aprende a ocupar espacio en la mente ajena sin decir una sola palabra.</span></li>
-            <li><span><strong>Quemar las Naves:</strong> Elimina mentalmente la opción del fracaso y comprométete con tu victoria absoluta.</span></li>
-        </ul>
+<div class="manifiesto-box" id="vault">
+<h2 class="oro-liquid-text">¿Estás listo para quemar las naves?</h2>
+<p>La competencia es para los que no tienen identidad. El 1% lidera, define las reglas y crea su propio juego.</p>
 
-        <div class="final-buy-box" id="comprar">
-            <h2 class="gold">¿ESTÁS LISTO PARA EL SIGUIENTE NIVEL?</h2>
-            <p style="font-size: 1.2rem;">El 1% no busca superar a la competencia; busca hacerla irrelevante.</p>
-            <br>
-            <a href="TU_LINK_HOTMART" class="cta-btn">Descargar Código Alfa VIP</a>
-            <p style="margin-top: 25px; font-size: 0.8rem; color: #555;">Acceso inmediato tras la compra. Garantía de 7 días.</p>
-        </div>
-    </main>
+<!-- MOKAP DEL LIBRO -->
+<div style="margin:30px auto; max-width:250px;">
+<img src="https://via.placeholder.com/250x350?text=Libro+Código+Alfa" alt="Portada Código Alfa VIP" style="width:100%; border:3px solid transparent; border-image: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5e6 75%, #aa771c 100%); border-image-slice:1; border-radius:5px; box-shadow:0 0 25px rgba(212,175,55,0.5);">
+</div>
 
-    <footer>
-        <p>&copy; 2026 CÓDIGO ALFA VIP - Albert S.</p>
-        <p>El 1% no compite; la competencia es para los que no tienen identidad.</p>
-    </footer>
+<!-- FORMULARIO -->
+<form id="vault" action="https://gmail.usX.list-manage.com/subscribe/post?u=TU_ID&id=TU_LISTA" method="POST">
+<input type="text" name="name" placeholder="Nombre" required>
+<input type="email" name="email" placeholder="Email" required>
+<input type="hidden" name="redirect" value="https://tusitio.com/gracias.html">
+<button type="submit">DESCARGAR CÓDIGO ALFA VIP AHORA</button>
+<p style="margin-top:15px; font-size:0.85rem; color:#ccc;">Acceso inmediato. Garantía de 7 días.</p>
+</form>
+</div>
+
+<footer>
+<p>&copy; 2026 CÓDIGO ALFA VIP. AUTOR: ALBERT S.</p>
+<p>No aceptes el guion de la mediocridad. Lidera o desaparece.</p>
+</footer>
 
 </body>
 </html>
