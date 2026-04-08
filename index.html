@@ -3,190 +3,170 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>CÓDIGO ALFA VIP | Acceso Exclusivo</title>
+  <title>CÓDIGO ALFA VIP — Excelencia Estratégica</title>
   
   <style>
-    /* VARIABLES PREMIUM */
     :root {
-      --bg: #000000;
-      --card: #0A0A0A;
-      --gold: #AD935B; /* Oro táctico */
-      --text: #FFFFFF;
-      --muted: #555555;
+      --bg: #030305;
+      --gold: #C5A059; /* Oro champaña mate */
+      --gold-bright: #E8D2A6;
+      --white: #FFFFFF;
+      --glass: rgba(255, 255, 255, 0.02);
+      --border: rgba(197, 160, 89, 0.15);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
     
     body {
-      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-family: 'Inter', -apple-system, system-ui, sans-serif;
       background-color: var(--bg);
-      color: var(--text);
-      line-height: 1.4;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
+      color: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
     }
 
-    .container { max-width: 1100px; margin: 0 auto; padding: 60px 20px; flex: 1; }
-
-    /* CABECERA */
-    header { 
-      text-align: center; 
-      margin-bottom: 80px; 
-      display: flex; 
-      flex-direction: column; 
-      align-items: center; 
-    }
-    .logo-img { 
-      width: 100px; 
-      height: auto; 
-      margin-bottom: 20px;
-      border: 1px solid #1a1a1a;
-      padding: 5px;
-    }
-    .brand-tag { 
-      font-size: 12px; 
-      letter-spacing: 6px; 
-      text-transform: uppercase; 
-      color: var(--gold);
-      font-weight: 400;
+    /* Fondo con iluminación dinámica */
+    .glow-bg {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: radial-gradient(circle at 50% -20%, rgba(197, 160, 89, 0.08), transparent 50%);
+      z-index: -1;
     }
 
-    /* LAYOUT HERO */
-    .hero { 
-      display: grid; 
-      grid-template-columns: 1fr 1fr; 
-      gap: 60px; 
-      align-items: center; 
+    .container { max-width: 1100px; margin: 0 auto; padding: 80px 24px; }
+
+    /* Header de Élite */
+    header { text-align: center; margin-bottom: 90px; }
+    .logo-main {
+      width: 120px; height: auto; margin-bottom: 25px;
+      filter: drop-shadow(0 0 15px rgba(197, 160, 89, 0.2));
+    }
+    .brand-title {
+      font-size: 14px; font-weight: 400; letter-spacing: 8px;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 10px;
     }
 
-    .hero-text h1 {
-      font-size: clamp(40px, 6vw, 68px);
-      font-weight: 900;
-      line-height: 0.9;
-      letter-spacing: -3px;
-      margin-bottom: 25px;
-      text-transform: uppercase;
+    /* Hero Section */
+    .hero { text-align: center; margin-bottom: 100px; }
+    h1 {
+      font-size: clamp(40px, 8vw, 72px); font-weight: 800; line-height: 1;
+      letter-spacing: -3px; margin-bottom: 20px;
     }
-    .hero-text p {
-      font-size: 18px;
-      color: #777;
-      max-width: 400px;
-      margin-bottom: 30px;
-      font-weight: 300;
+    .gold-gradient {
+      background: linear-gradient(180deg, #FFFFFF 0%, var(--gold) 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
     }
-
-    /* FORMULARIO VAULT */
-    .vault-card {
-      background: var(--card);
-      border: 1px solid #151515;
-      padding: 50px;
-      position: relative;
-    }
-    .vault-card::after {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; width: 100%; height: 2px;
-      background: var(--gold);
+    .subtitle {
+      font-size: clamp(18px, 4vw, 22px); color: rgba(255,255,255,0.5);
+      max-width: 600px; margin: 0 auto; font-weight: 300;
     }
 
-    h2 { font-size: 20px; margin-bottom: 35px; letter-spacing: 2px; font-weight: 600; }
-
-    input {
-      width: 100%;
-      padding: 15px 0;
-      margin-bottom: 30px;
-      background: transparent;
-      border: none;
-      border-bottom: 1px solid #222;
-      color: white;
-      font-size: 16px;
-      transition: 0.3s;
-    }
-    input:focus { border-bottom-color: var(--gold); outline: none; }
-
-    .btn-vip {
-      width: 100%;
-      padding: 20px;
-      background: var(--gold);
-      color: #000;
-      border: none;
-      font-weight: 900;
-      font-size: 14px;
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-    .btn-vip:hover { filter: brightness(1.2); transform: translateY(-2px); }
-
-    /* IMAGEN DE LA GUÍA */
-    .guide-preview {
-      width: 100%;
-      max-width: 300px;
-      margin-top: 20px;
-      filter: grayscale(0.2) contrast(1.1);
-      border: 1px solid #111;
+    /* Card Central (Glassmorphism) */
+    .premium-card {
+      background: var(--glass);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--border);
+      border-radius: 32px;
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      overflow: hidden;
+      box-shadow: 0 40px 100px rgba(0,0,0,0.8);
     }
 
-    /* FOOTER */
+    .visual-side {
+      background: linear-gradient(135deg, rgba(197, 160, 89, 0.05) 0%, transparent 100%);
+      padding: 60px; display: flex; flex-direction: column; justify-content: center; align-items: center;
+      border-right: 1px solid var(--border);
+    }
+    .guide-mockup {
+      width: 100%; max-width: 280px; border-radius: 12px;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+      border: 1px solid rgba(197, 160, 89, 0.3);
+      transition: transform 0.5s ease;
+    }
+    .premium-card:hover .guide-mockup { transform: translateY(-10px) rotate(-2deg); }
+
+    .form-side { padding: 60px; display: flex; flex-direction: column; justify-content: center; }
+    h3 { font-size: 24px; margin-bottom: 30px; letter-spacing: -0.5px; }
+
+    /* Inputs de Lujo */
+    .input-field {
+      width: 100%; padding: 20px; margin-bottom: 20px;
+      background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px; color: white; font-size: 16px; transition: 0.3s;
+    }
+    .input-field:focus { border-color: var(--gold); background: rgba(197, 160, 89, 0.05); outline: none; }
+
+    /* Botón de Impacto */
+    .cta-button {
+      width: 100%; padding: 22px; border-radius: 14px; border: none;
+      background: linear-gradient(135deg, var(--gold) 0%, #8A6D3B 100%);
+      color: #000; font-weight: 800; font-size: 16px; text-transform: uppercase;
+      letter-spacing: 2px; cursor: pointer; transition: 0.4s;
+      box-shadow: 0 15px 35px rgba(197, 160, 89, 0.2);
+    }
+    .cta-button:hover { transform: translateY(-3px); box-shadow: 0 20px 50px rgba(197, 160, 89, 0.4); filter: brightness(1.1); }
+
     footer {
-      padding: 60px 20px;
-      border-top: 1px solid #111;
-      text-align: center;
-      font-size: 11px;
-      color: #333;
-      letter-spacing: 2px;
+      margin-top: 100px; padding: 60px 0; border-top: 1px solid rgba(255,255,255,0.05);
+      text-align: center; color: rgba(255,255,255,0.3); font-size: 13px;
     }
-    .email-link { color: #555; text-decoration: none; display: block; margin-top: 10px; }
+    .footer-email { color: var(--gold); text-decoration: none; display: block; margin-top: 15px; font-weight: 500; }
 
-    /* RESPONSIVE */
     @media (max-width: 850px) {
-      .hero { grid-template-columns: 1fr; text-align: center; }
-      .hero-text p { margin-inline: auto; }
-      .hero-text h1 { font-size: 45px; }
-      .guide-preview { margin-inline: auto; }
+      .premium-card { grid-template-columns: 1fr; }
+      .visual-side { border-right: none; border-bottom: 1px solid var(--border); padding: 40px; }
+      .form-side { padding: 40px; }
+      h1 { font-size: 48px; }
     }
   </style>
 </head>
 <body>
+  <div class="glow-bg"></div>
 
   <div class="container">
     <header>
-      <img src="https://i.postimg.cc/mD8mK0z6/image.png" alt="Logo Código Alfa" class="logo-img">
-      <div class="brand-tag">Albert Sierra · VIP Access</div>
+      <img src="https://i.ibb.co/image-png-4e57df51-d15b-43b3-8d19-87a051725aa2.png" alt="CÓDIGO ALFA" class="logo-main">
+      <div class="brand-title">Albert Sierra</div>
     </header>
 
-    <main class="hero">
-      <section class="hero-text">
-        <h1>CÓDIGO<br>ALFA VIP</h1>
-        <p>Arquitectura operativa de disciplina y dominio mental para hombres de alto valor.</p>
-        <img src="https://i.postimg.cc/qR8XFzD0/image.png" alt="Guía VIP" class="guide-preview">
+    <main>
+      <section class="hero">
+        <h1 class="gold-gradient">CÓDIGO ALFA VIP</h1>
+        <p class="subtitle">La arquitectura de dominio mental y disciplina estratégica reservada para el 1%.</p>
       </section>
 
-      <section class="vault-card">
-        <h2>RECLAMAR ACCESO</h2>
-        <form action="#" method="POST">
-          <input type="text" placeholder="NOMBRE COMPLETO" required>
-          <input type="email" placeholder="EMAIL PRIVADO" required>
-          <button type="submit" class="btn-vip">Obtener Guía Ahora</button>
-        </form>
-        <p style="font-size: 9px; color: #222; margin-top: 25px; letter-spacing: 1px; text-align: center;">
-          SISTEMA ENCRIPTADO · ACCESO INMEDIATO
-        </p>
-      </section>
+      <div class="premium-card">
+        <div class="visual-side">
+          <img src="https://i.ibb.co/image-png-32786f6b-e769-44a7-8c6f-b17eedd2677e.png" alt="Guía VIP" class="guide-mockup">
+          <div style="margin-top: 30px; text-align: center;">
+            <span style="color: var(--gold); font-size: 12px; letter-spacing: 3px; font-weight: 700;">ACCESO INMEDIATO</span>
+            <p style="font-size: 11px; opacity: 0.4; margin-top: 5px;">FORMATO DIGITAL · ENCRIPTADO</p>
+          </div>
+        </div>
+
+        <div class="form-side">
+          <h3>Inicia tu transformación</h3>
+          <form action="#" method="POST">
+            <input type="text" class="input-field" placeholder="Nombre completo" required>
+            <input type="email" class="input-field" placeholder="Email corporativo / privado" required>
+            <button type="submit" class="cta-button">Reclamar Acceso VIP</button>
+            <p style="font-size: 11px; opacity: 0.3; text-align: center; margin-top: 20px;">
+              🛡️ Tu privacidad es nuestro estándar de oro.
+            </p>
+          </form>
+        </div>
+      </div>
     </main>
-  </div>
 
-  <footer>
-    <p>© <span id="year"></span> CÓDIGO ALFA</p>
-    <a href="mailto:codigo.alfa2.3@gmail.com" class="email-link">SOPORTE: CODIGO.ALFA2.3@GMAIL.COM</a>
-  </footer>
+    <footer>
+      <p>© <span id="year"></span> CÓDIGO ALFA · ARQUITECTURA DE PODER</p>
+      <a href="mailto:codigo.alfa2.3@gmail.com" class="footer-email">codigo.alfa2.3@gmail.com</a>
+    </footer>
+  </div>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
-
 </body>
 </html>
