@@ -25,25 +25,25 @@ body {
   overflow-x: hidden;
 }
 
-/* Fondo glow sutil */
+/* ========= GLOW GLOBAL MÁS INTENSO ========= */
 body::before {
   content: "";
   position: fixed;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(212,175,55,0.12), transparent 70%);
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(255,215,0,0.25), transparent 70%);
   top: 30%;
   left: 50%;
   transform: translateX(-50%);
-  filter: blur(80px);
+  filter: blur(120px);
   z-index: 0;
 }
 
 /* ========= HEADER ========= */
 header {
   font-size: 0.75rem;
-  color: #444;
-  letter-spacing: 2px;
+  color: #666;
+  letter-spacing: 3px;
   text-align: center;
   margin-bottom: 2rem;
   z-index: 1;
@@ -58,34 +58,53 @@ header {
   z-index: 1;
 }
 
-/* Título oro 24K */
+/* ========= TÍTULO ORO VIVO 24K ========= */
 h1 {
-  font-size: 2.5rem;
-  font-weight: 800;
-  background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5e6, #aa771c);
+  font-size: 2.6rem;
+  font-weight: 900;
+  background: linear-gradient(
+    90deg,
+    #fff8dc,
+    #ffd700,
+    #ffcc00,
+    #fff2a8,
+    #ffd700,
+    #b8860b
+  );
+  background-size: 300% 300%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 0 5px rgba(212,175,55,0.5));
-  letter-spacing: 2px;
+  animation: goldFlow 6s linear infinite;
+  filter: drop-shadow(0 0 6px rgba(255,215,0,0.8))
+          drop-shadow(0 0 20px rgba(255,215,0,0.4));
+  letter-spacing: 3px;
 }
 
-/* Subtítulo */
+/* Animación oro vivo */
+@keyframes goldFlow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+/* ========= SUBTÍTULO ========= */
 .subtitle {
   margin-top: 1rem;
   font-size: 0.95rem;
-  color: #aaa;
+  color: #bbb;
   max-width: 400px;
 }
 
-/* Ebook */
+/* ========= EBOOK ========= */
 .ebook {
   margin-top: 2rem;
-  width: 160px;
-  height: 240px;
-  border: 1px solid #AD935B;
-  border-radius: 8px;
-  background: linear-gradient(145deg, #0a0a0a, #111);
-  box-shadow: 0 0 20px rgba(212,175,55,0.1);
+  width: 170px;
+  height: 250px;
+  border: 1px solid rgba(255,215,0,0.7);
+  border-radius: 10px;
+  background: linear-gradient(145deg, #111, #000);
+  box-shadow: 
+    0 0 15px rgba(255,215,0,0.4),
+    0 0 40px rgba(255,215,0,0.2);
 }
 
 /* ========= VAULT ========= */
@@ -94,29 +113,29 @@ h1 {
   width: 100%;
   max-width: 400px;
   padding: 2rem;
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(212,175,55,0.4);
+  background: rgba(20,20,20,0.6);
+  border: 1px solid rgba(255,215,0,0.6);
   border-radius: 16px;
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(14px);
   position: relative;
   z-index: 1;
 }
 
-/* Glow detrás */
+/* Glow más fuerte */
 .vault::before {
   content: "";
   position: absolute;
-  width: 250px;
-  height: 250px;
-  background: radial-gradient(circle, rgba(212,175,55,0.2), transparent 70%);
-  top: -40px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(255,215,0,0.4), transparent 70%);
+  top: -60px;
   left: 50%;
   transform: translateX(-50%);
-  filter: blur(60px);
+  filter: blur(80px);
   z-index: -1;
 }
 
-/* Formulario */
+/* ========= FORM ========= */
 form {
   display: flex;
   flex-direction: column;
@@ -126,53 +145,59 @@ form {
 input {
   background: transparent;
   border: none;
-  border-bottom: 1px solid rgba(212,175,55,0.5);
+  border-bottom: 1px solid rgba(255,215,0,0.6);
   padding: 0.7rem 0;
   color: #fff;
   font-size: 0.9rem;
 }
 
 input::placeholder {
-  color: #666;
+  color: #888;
+  letter-spacing: 1px;
 }
 
 input:focus {
   outline: none;
-  border-bottom: 1px solid #D4AF37;
+  border-bottom: 1px solid #ffd700;
 }
 
-/* Botón */
+/* ========= BOTÓN ORO VIVO ========= */
 button {
   margin-top: 1rem;
-  padding: 0.9rem;
-  background: #D4AF37;
+  padding: 1rem;
+  background: linear-gradient(90deg, #ffd700, #ffcc00, #ffd700);
   border: none;
   color: #000;
-  font-weight: 800;
-  letter-spacing: 1px;
-  border-radius: 30px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  border-radius: 40px;
   cursor: pointer;
   transition: 0.3s ease;
+  box-shadow: 
+    0 0 10px rgba(255,215,0,0.6),
+    inset 0 0 5px rgba(255,255,255,0.5);
 }
 
 button:hover {
-  background: #f5d777;
-  box-shadow: 0 0 25px rgba(212,175,55,0.9);
+  background: linear-gradient(90deg, #fff2a8, #ffd700, #fff2a8);
+  box-shadow: 
+    0 0 25px rgba(255,215,0,1),
+    0 0 50px rgba(255,215,0,0.6);
+  transform: scale(1.03);
 }
 
 /* ========= SOCIAL PROOF ========= */
 .social-proof {
   margin-top: 1.5rem;
   font-size: 0.8rem;
-  color: #777;
+  color: #888;
   text-align: center;
-  z-index: 1;
 }
 
 /* ========= RESPONSIVE ========= */
 @media(min-width: 768px) {
   h1 {
-    font-size: 4rem;
+    font-size: 4.5rem;
   }
 
   .subtitle {
@@ -180,8 +205,8 @@ button:hover {
   }
 
   .ebook {
-    width: 200px;
-    height: 300px;
+    width: 220px;
+    height: 320px;
   }
 }
 </style>
