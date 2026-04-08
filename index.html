@@ -13,15 +13,19 @@
     --blanco:#ffffff;
 }
 
-/* Gradiente Oro Líquido */
---oro-liquido: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5e6 75%, #aa771c 100%);
-
-/* Efectos */
-.oro-liquid-text{
+/* Gradiente Oro Líquido Animado */
+@keyframes oro-anim{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+.oro-liquid-text, .gold-text, .cta-main, .chapter-number, .chapter-card h3{
     background: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5e6 75%, #aa771c 100%);
+    background-size: 300% 300%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 0 10px rgba(212,175,55,0.5));
+    animation: oro-anim 3s ease-in-out infinite;
+    filter: drop-shadow(0 0 10px rgba(212,175,55,0.6));
 }
 
 /* Body y tipografía */
@@ -33,6 +37,7 @@ body{
     line-height:1.6;
 }
 h1,h2,h3{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:2px;text-align:center;}
+
 /* Hero */
 .hero{
     min-height:100vh;
@@ -49,15 +54,13 @@ h1,h2,h3{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing
     padding:20px;
     text-align:center;
 }
-.gold-text{font-weight:bold; font-size:1.2rem; background: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5e6 75%, #aa771c 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; filter: drop-shadow(0 0 8px rgba(212,175,55,0.5));}
 
 /* Títulos */
 .headline{
     font-size:4rem;
     margin:10px 0;
-    text-shadow:2px 2px 10px rgba(0,0,0,0.5);
+    text-shadow:2px 2px 15px rgba(212,175,55,0.5);
 }
-.headline.oro-liquid-text{font-size:4rem;}
 
 /* Subheadline */
 .subheadline{
@@ -69,8 +72,6 @@ h1,h2,h3{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing
 
 /* Botón */
 .cta-main{
-    background: linear-gradient(45deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5e6 75%, #aa771c 100%);
-    color:black;
     padding:22px 45px;
     font-family:'Oswald',sans-serif;
     font-size:1.4rem;
@@ -78,11 +79,11 @@ h1,h2,h3{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing
     font-weight:bold;
     border-radius:2px;
     transition:0.3s all;
-    box-shadow:0 0 20px rgba(212,175,55,0.3);
+    box-shadow:0 0 25px rgba(212,175,55,0.4);
 }
 .cta-main:hover{
-    transform:translateY(-3px);
-    box-shadow:0 10px 30px rgba(212,175,55,0.5);
+    transform:scale(1.05);
+    box-shadow:0 0 40px rgba(212,175,55,0.8);
 }
 
 /* Contenedor general */
@@ -122,8 +123,6 @@ h1,h2,h3{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing
     border-image-slice:1;
     background-color:#0f0f0f;
 }
-.chapter-number{font-family:'Oswald',sans-serif;font-size:1rem; background: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5e6 75%, #aa771c 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; filter: drop-shadow(0 0 8px rgba(212,175,55,0.5));}
-.chapter-card h3{margin:15px 0;font-size:1.6rem; text-align:left; background: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5e6 75%, #aa771c 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; filter: drop-shadow(0 0 10px rgba(212,175,55,0.5));}
 
 /* Manifiesto */
 .manifiesto-box{
@@ -135,7 +134,7 @@ h1,h2,h3{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing
     border:2px solid transparent;
     border-image: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5e6 75%, #aa771c 100%);
     border-image-slice:1;
-    box-shadow:0 0 30px rgba(212,175,55,0.4);
+    box-shadow:0 0 40px rgba(212,175,55,0.5);
 }
 
 /* Formulario de captura */
@@ -160,9 +159,6 @@ h1,h2,h3{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing
 }
 #vault input::placeholder{color:#bbb;}
 #vault button{
-    background: linear-gradient(45deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5e6 75%, #aa771c 100%);
-    color:#000;
-    font-weight:bold;
     padding:15px 35px;
     font-size:1.1rem;
     border:none;
@@ -171,7 +167,7 @@ h1,h2,h3{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing
 }
 #vault button:hover{
     transform:scale(1.05);
-    box-shadow:0 0 20px rgba(212,175,55,0.7);
+    box-shadow:0 0 25px rgba(212,175,55,0.8);
 }
 
 /* Footer */
@@ -182,6 +178,7 @@ footer{
     font-size:0.8rem;
     color:#444;
 }
+
 @media(max-width:768px){
     .headline{font-size:2.5rem;}
     .subheadline{font-size:1.1rem;}
