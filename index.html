@@ -1,29 +1,190 @@
-[ROL] Actúa como un Desarrollador Web Senior y Diseñador UI/UX especializado en marcas de lujo y nichos de alto rendimiento.
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CÓDIGO ALFA VIP</title>
 
-[OBJETIVO] Crea el código para una página web (Landing Page) de una sola página para "CÓDIGO ALFA VIP". La web debe servir para captar leads (nombre y email) ofreciendo una "Guía de Acceso VIP".
+<!-- Tipografía -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 
-[ESTÉTICA VISUAL - CRÍTICO]
-- Fondo: Negro puro (#000000).
-- Acentos: Oro envejecido (#AD935B) y Oro brillante (#D4AF37).
-- Tipografía: Sans-serif elegante (tipo Helvetica o Inter).
-- Estilo: Minimalista, con efectos de sombreado (glow) radial en el fondo.
+<style>
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-[SECCIONES REQUERIDAS]
-1. Header: Logo centrado (usar un placeholder elegante) y texto "VIP ACCESS".
-2. Hero Section: 
-   - Título: "CÓDIGO ALFA VIP" en tamaño masivo y negrita.
-   - Subtítulo: "La arquitectura operativa de disciplina y dominio mental para el 1%."
-3. Vault Card (Caja de captura):
-   - Un contenedor con borde sutil dorado y efecto de desenfoque de fondo (Glassmorphism).
-   - Formulario con campos: [NOMBRE] y [EMAIL PRIVADO].
-   - Botón de acción: "OBTENER ACCESO AHORA" (Fondo dorado, texto negro, fuente en negrita).
-4. Footer: Copyright y correo de soporte en letra pequeña y color gris tenue.
+/* ================= BASE ================= */
+body {
+  font-family: 'Inter', sans-serif;
+  background: #000;
+  color: #fff;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  overflow-x: hidden;
+}
 
-[RESTRICCIONES TÉCNICAS]
-- Entrega un solo archivo que combine HTML y CSS (Internal Style Sheet).
-- Usa Flexbox para que sea 100% responsiva (móvil y escritorio).
-- Asegúrate de que los inputs tengan un estilo minimalista (solo borde inferior).
-- El botón debe tener un efecto hover (que brille más al pasar el mouse).
+/* Glow radial fondo */
+body::before {
+  content: "";
+  position: fixed;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(212,175,55,0.15), transparent 70%);
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  filter: blur(80px);
+  z-index: 0;
+}
 
-[FORMATO DE SALIDA]
-Proporciona el código limpio en un bloque de código Markdown. No incluyas explicaciones innecesarias, solo el código listo para guardar como .html
+/* ================= HEADER ================= */
+header {
+  width: 100%;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.logo {
+  font-weight: 600;
+  letter-spacing: 4px;
+  color: #AD935B;
+  font-size: 0.9rem;
+}
+
+/* ================= HERO ================= */
+.hero {
+  text-align: center;
+  padding: 2rem 1rem;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.hero p {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  color: #bbb;
+  max-width: 500px;
+}
+
+/* ================= VAULT CARD ================= */
+.vault {
+  margin-top: 2rem;
+  padding: 2rem;
+  width: 90%;
+  max-width: 400px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(212,175,55,0.3);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  z-index: 1;
+}
+
+/* Inputs */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(212,175,55,0.4);
+  padding: 0.6rem 0;
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+input::placeholder {
+  color: #777;
+}
+
+input:focus {
+  outline: none;
+  border-bottom: 1px solid #D4AF37;
+}
+
+/* Botón */
+button {
+  margin-top: 1rem;
+  padding: 0.8rem;
+  border: none;
+  background: #D4AF37;
+  color: #000;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background: #f5d777;
+  box-shadow: 0 0 20px rgba(212,175,55,0.6);
+}
+
+/* ================= FOOTER ================= */
+footer {
+  margin-top: 2rem;
+  padding: 1rem;
+  font-size: 0.7rem;
+  color: #666;
+  text-align: center;
+  z-index: 1;
+}
+
+/* ================= RESPONSIVE ================= */
+@media(min-width: 768px) {
+  .hero h1 {
+    font-size: 4rem;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="logo">VIP ACCESS</div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>CÓDIGO ALFA VIP</h1>
+  <p>La arquitectura operativa de disciplina y dominio mental para el 1%.</p>
+</section>
+
+<!-- VAULT CARD -->
+<div class="vault">
+  <form>
+    <input type="text" placeholder="NOMBRE" required>
+    <input type="email" placeholder="EMAIL PRIVADO" required>
+    <button type="submit">OBTENER ACCESO AHORA</button>
+  </form>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  © 2026 Código Alfa VIP · soporte@codigoalfavip.com
+</footer>
+
+</body>
+</html>
