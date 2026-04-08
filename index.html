@@ -3,219 +3,73 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CÓDIGO ALFA VIP | Acceso Privado</title>
+<title>Acceso Confirmado</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-
-/* RESET */
-*{margin:0;padding:0;box-sizing:border-box;}
-
 body{
-    font-family:'Inter',sans-serif;
     background:#000;
     color:#e5e5e5;
-}
-
-/* GLOW */
-body::before{
-    content:"";
-    position:fixed;
-    width:800px;
-    height:800px;
-    background:radial-gradient(circle, rgba(212,175,55,0.12), transparent 70%);
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    filter:blur(120px);
-    z-index:0;
-}
-
-/* CONTAINER */
-.container{
-    max-width:1100px;
-    margin:auto;
+    font-family:'Inter',sans-serif;
+    text-align:center;
     padding:80px 20px;
-    position:relative;
-    z-index:1;
 }
 
-/* GOLD */
 .gold{
-    background:linear-gradient(120deg,#bf953f,#fcf6ba,#b38728,#fbf5e6,#aa771c);
-    background-size:300% 300%;
+    background:linear-gradient(120deg,#bf953f,#fcf6ba,#b38728);
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
-    animation:gold 6s infinite;
-}
-
-@keyframes gold{
-    0%{background-position:0%}
-    50%{background-position:100%}
-    100%{background-position:0%}
-}
-
-/* HERO */
-.hero{
-    display:flex;
-    flex-wrap:wrap;
-    align-items:center;
-    justify-content:center;
-    gap:40px;
-    padding:100px 20px;
-}
-
-/* TEXT */
-.hero-text{
-    max-width:500px;
 }
 
 h1{
     font-family:'Cinzel',serif;
-    font-size:3.5rem;
+    font-size:3rem;
 }
 
-.sub{
-    margin-top:20px;
-    color:#aaa;
+.box{
+    max-width:600px;
+    margin:40px auto;
 }
 
-/* MOCKUP */
-.mockup{
-    width:280px;
-    transform:rotateY(-15deg) rotateX(5deg);
-    box-shadow:0 30px 60px rgba(0,0,0,0.8);
-    border-radius:8px;
-}
-
-/* FORM */
-.form-box{
+.cta{
     margin-top:30px;
-    background:#0a0a0a;
-    padding:25px;
-    border:1px solid rgba(212,175,55,0.3);
-}
-
-input{
-    width:100%;
-    padding:15px;
-    margin-bottom:15px;
-    border:none;
-    background:#111;
-    color:#fff;
-}
-
-button{
-    width:100%;
-    padding:15px;
+    padding:18px 40px;
     border:none;
     font-weight:700;
     cursor:pointer;
     color:#000;
     background:linear-gradient(135deg,#bf953f,#fcf6ba,#b38728);
-    box-shadow:0 0 20px rgba(212,175,55,0.5);
 }
-
-/* BENEFITS */
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:30px;
-    margin-top:60px;
-}
-
-.card{
-    background:#0a0a0a;
-    padding:30px;
-    border:1px solid #1a1a1a;
-}
-
-.card h3{
-    color:#bf953f;
-    margin-bottom:10px;
-}
-
-/* FOOTER */
-footer{
-    text-align:center;
-    padding:40px;
-    color:#555;
-    font-size:0.8rem;
-}
-
-/* RESPONSIVE */
-@media(max-width:768px){
-    h1{font-size:2.5rem;}
-    .hero{flex-direction:column;}
-}
-
 </style>
 </head>
 
 <body>
 
-<section class="hero">
+<h1 class="gold">ACCESO CONFIRMADO</h1>
 
-    <!-- TEXTO -->
-    <div class="hero-text">
-        <h1 class="gold">CÓDIGO ALFA VIP</h1>
+<div class="box">
 
-        <p class="sub">
-            No es un libro. Es el sistema que elimina tu versión promedio.
-        </p>
+<p>Revisa tu email. El manifiesto ya fue enviado.</p>
 
-        <!-- FORM -->
-        <div class="form-box">
+<p style="margin-top:20px;">
+Pero antes de irte…
+</p>
 
-            <form action="https://TU-SERVICIO.com/subscribe" method="POST">
+<h2 style="margin-top:30px;">
+La mayoría lee.  
+Pocos aplican.
+</h2>
 
-                <input type="text" name="name" placeholder="Nombre" required>
-                <input type="email" name="email" placeholder="Email" required>
+<p style="margin-top:20px;">
+Si quieres ejecutar de verdad, necesitas estructura.
+</p>
 
-                <button type="submit">DESCARGAR AHORA</button>
-
-            </form>
-
-        </div>
-    </div>
-
-    <!-- MOCKUP -->
-    <img class="mockup" src="https://via.placeholder.com/400x600/000000/FFD700?text=CODIGO+ALFA+VIP" alt="Libro Código Alfa VIP">
-
-</section>
-
-<div class="container">
-
-    <div class="grid">
-
-        <div class="card">
-            <h3>Reprogramación</h3>
-            <p>Cambia tu identidad desde la raíz.</p>
-        </div>
-
-        <div class="card">
-            <h3>Dominio Mental</h3>
-            <p>Control total sin depender de motivación.</p>
-        </div>
-
-        <div class="card">
-            <h3>Poder Estratégico</h3>
-            <p>Dejas de reaccionar y empiezas a dirigir.</p>
-        </div>
-
-        <div class="card">
-            <h3>Ejecución</h3>
-            <p>Acción precisa sin ruido.</p>
-        </div>
-
-    </div>
+<button class="cta">
+ACCEDER AL SISTEMA COMPLETO
+</button>
 
 </div>
-
-<footer>
-© 2026 Código Alfa VIP · Acceso restringido
-</footer>
 
 </body>
 </html>
