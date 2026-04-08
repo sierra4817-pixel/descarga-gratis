@@ -1,95 +1,183 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
+    <metvt-as.coma charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Orquestador Bimodal - Panel de Control</title>
+    <title>CÓDIGO ALFA VIP | El 1% No Compite, Lidera</title>
     <style>
+        /* VARIABLES PREMIUM */
+        :root {
+            --bg: #000000;
+            --card: #0A0A0A;
+            --gold: #AD935B; /* Oro Envejecido */
+            --gold-bright: #D4AF37;
+            --text: #F8F9FB;
+            --muted: #444444;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; outline: none; }
+        
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #121212;
-            color: #e0e0e0;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.4;
             display: flex;
-            justify-content: center;
-            padding: 40px;
+            flex-direction: column;
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
         }
-        .container {
-            max-width: 800px;
-            background: #1e1e1e;
-            padding: 30px;
-            border-radius: 12px;
-            border: 1px solid #bfa100; /* Dorado sutil al estilo Código Alfa */
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+
+        /* Iluminación Radial Periférica */
+        .glow-bg {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 50% -20%, rgba(173, 147, 91, 0.08), transparent 50%);
+            z-index: -1;
         }
-        h1 {
-            color: #ffd700;
-            text-align: center;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 60px 20px; flex: 1; }
+
+        /* HEADER MINIMALISTA */
+        header { 
+            text-align: center; 
+            margin-bottom: 90px; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
         }
-        .status-box {
-            background: #2a2a2a;
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            border-left: 5px solid #ffd700;
+        .logo-img { 
+            width: 100px; 
+            height: auto; 
+            margin-bottom: 15px; 
+            filter: grayscale(1); 
+            border: 1px solid #1a1a1a; 
+            padding: 5px; 
         }
-        .model-selector {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            margin: 25px 0;
+        .brand-tag { 
+            font-size: 13px; 
+            letter-spacing: 5px; 
+            text-transform: uppercase; 
+            color: var(--gold); 
+            font-weight: 300; 
         }
-        .btn {
-            padding: 10px 25px;
+
+        /* LAYOUT PRINCIPAL (The Vault) */
+        .hero { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 80px; 
+            align-items: center; 
+        }
+
+        /* Títulos masivos y autoridad */
+        .hero-text h1 {
+            font-size: clamp(40px, 6vw, 64px);
+            font-weight: 900;
+            line-height: 0.9;
+            letter-spacing: -3px;
+            margin-bottom: 30px;
+        }
+        .hero-text p {
+            font-size: 18px;
+            color: #777;
+            max-width: 450px;
+            font-weight: 300;
+            margin-bottom: 40px;
+        }
+
+        /* Caja de captura Premium (Glassmorphism sutil) */
+        .vault-card {
+            background: rgba(10, 10, 10, 0.5);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            padding: 50px;
+            border-radius: 4px;
+        }
+
+        h2 { font-size: 22px; margin-bottom: 30px; letter-spacing: -0.5px; font-weight: 500; }
+
+        /* Inputs minimalistas */
+        input {
+            width: 100%; padding: 18px 0; margin-bottom: 30px;
+            background: transparent; border: none; border-bottom: 1px solid var(--muted);
+            color: white; font-size: 16px; transition: 0.3s; border-radius: 0;
+        }
+        input:focus { border-bottom-color: var(--gold); }
+
+        /* Botón de acción VIP */
+        .btn-vip {
+            width: 100%;
+            padding: 20px;
+            background: var(--gold);
+            color: #000;
             border: none;
-            border-radius: 5px;
+            font-weight: 900;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
             cursor: pointer;
-            font-weight: bold;
             transition: 0.3s;
         }
-        .btn-openai { background-color: #10a37f; color: white; }
-        .btn-gemini { background-color: #1a73e8; color: white; }
-        .btn:hover { opacity: 0.8; transform: translateY(-2px); }
-        ul { line-height: 1.6; }
+        .btn-vip:hover { background: var(--gold-bright); transform: translateY(-2px); }
+
+        /* FOOTER */
         footer {
-            text-align: center;
-            font-size: 0.8em;
-            margin-top: 30px;
-            color: #777;
+            margin-top: 150px; 
+            padding: 40px 0; 
+            border-top: 1px solid #111;
+            text-align: center; 
+            font-size: 11px; 
+            color: #333; 
+            letter-spacing: 2px;
+        }
+        .email-link { color: #555; text-decoration: none; display: block; margin-top: 10px; font-weight: bold; }
+
+        /* RESPONSIVE MÓVIL */
+        @media (max-width: 900px) {
+            .hero { grid-template-columns: 1fr; text-align: center; }
+            .hero-text p { margin-inline: auto; }
+            .hero-text h1 { font-size: 45px; }
+            header { margin-bottom: 60px; }
         }
     </style>
 </head>
 <body>
+    <div class="glow-bg"></div>
 
-<div class="container">
-    <h1>Orquestador Bimodal</h1>
-    <p style="text-align: center; font-style: italic;">El Manifiesto del Prompting Eficaz</p>
-    
-    <div class="status-box">
-        <strong>Estado del Agente:</strong> Listo para procesar instrucciones.
-    </div>
+    <div class="container">
+        <header>
+            <img src="https://i.ibb.co/mD8mK0z6/image.png" alt="Logo Código Alfa VIP" class="logo-img">
+            <div class="brand-tag">Codigo.Alfa · VIP Access</div>
+        </header>
 
-    <h3>Misión del Sistema</h3>
-    <ul>
-        <li><strong>Ruteo Inteligente:</strong> Adaptación de prompts para GPT-5 o Gemini 2.5/Ultra.</li>
-        <li><strong>Análisis Documental:</strong> Basado en guías oficiales de OpenAI y Google AI.</li>
-        <li><strong>Validación:</strong> Control de calidad mediante Checklist de 6 puntos.</li>
-    </ul>
+        <main class="hero">
+            <section class="hero-text">
+                <h1>CÓDIGO<br>ALFA VIP</h1>
+                <p>La arquitectura operativa de disciplina y dominio mental para el 1%.</p>
+                <img src="https://i.ibb.co/qR8XFzD0/image.png" alt="Guía VIP" style="width: 100%; max-width: 320px; margin-top: 20px;">
+            </section>
 
-    <div class="model-selector">
-        <button class="btn btn-openai">Configurar para ChatGPT</button>
-        <button class="btn btn-gemini">Configurar para Gemini</button>
-    </div>
-
-    <div style="background: #000; padding: 20px; border-radius: 5px; font-family: monospace;">
-        <span style="color: #ffd700;">[SISTEMA]:</span> ¿Deseas usar ChatGPT o Gemini para tu siguiente prompt?
+            <section class="vault-card">
+                <h2>INICIAR ACCESO</h2>
+                <form action="#" method="POST">
+                    <input type="text" placeholder="NOMBRE" required>
+                    <input type="email" placeholder="EMAIL PRIVADO" required>
+                    <button type="submit" class="btn-vip">Obtener Guía Ahora</button>
+                </form>
+                <p style="font-size: 9px; color: #222; margin-top: 25px; letter-spacing: 1px; text-align: center;">
+                  PROCESO ENCRIPTADO · SIN SPAM
+                </p>
+            </section>
+        </main>
     </div>
 
     <footer>
-        &copy; 2026 Orquestador Bimodal - Especialista en Ingeniería de Prompts
+        <p>© <span id="year"></span> CÓDIGO ALFA VIP</p>
+        <a href="mailto:codigo.alfa2.3@gmail.com" class="email-link">SOPORTE EXCLUSIVO: CODIGO.ALFA2.3@GMAIL.COM</a>
     </footer>
-</div>
 
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
