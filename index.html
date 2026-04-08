@@ -5,7 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CÓDIGO ALFA VIP</title>
 
+<!-- Fuente -->
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
 <style>
+
 /* ========= RESET ========= */
 * {
   margin: 0;
@@ -15,124 +19,83 @@
 
 /* ========= BASE ========= */
 body {
-  font-family: system-ui, -apple-system, sans-serif;
-  background: #000;
-  color: #fff;
+  font-family: 'Inter', sans-serif;
+  background: #050505;
+  color: #f5f5f5;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  min-height: 100vh;
   padding: 2rem 1rem;
   overflow-x: hidden;
 }
 
-/* ========= GLOW GLOBAL MÁS INTENSO ========= */
+/* Glow ambiente */
 body::before {
   content: "";
   position: fixed;
-  width: 800px;
-  height: 800px;
-  background: radial-gradient(circle, rgba(255,215,0,0.25), transparent 70%);
-  top: 30%;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(246,226,122,0.15), transparent 70%);
+  top: 40%;
   left: 50%;
-  transform: translateX(-50%);
-  filter: blur(120px);
+  transform: translate(-50%, -50%);
+  filter: blur(100px);
   z-index: 0;
 }
 
-/* ========= HEADER ========= */
-header {
-  font-size: 0.75rem;
-  color: #666;
-  letter-spacing: 3px;
-  text-align: center;
-  margin-bottom: 2rem;
-  z-index: 1;
-}
-
-/* ========= HERO ========= */
-.hero {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  z-index: 1;
-}
-
-/* ========= TÍTULO ORO VIVO 24K ========= */
-h1 {
-  font-size: 2.6rem;
-  font-weight: 900;
-  background: linear-gradient(
-    90deg,
-    #fff8dc,
-    #ffd700,
-    #ffcc00,
-    #fff2a8,
-    #ffd700,
-    #b8860b
-  );
-  background-size: 300% 300%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: goldFlow 6s linear infinite;
-  filter: drop-shadow(0 0 6px rgba(255,215,0,0.8))
-          drop-shadow(0 0 20px rgba(255,215,0,0.4));
-  letter-spacing: 3px;
-}
-
-/* Animación oro vivo */
-@keyframes goldFlow {
-  0% { background-position: 0% 50%; }
-  100% { background-position: 200% 50%; }
-}
-
-/* ========= SUBTÍTULO ========= */
-.subtitle {
-  margin-top: 1rem;
-  font-size: 0.95rem;
-  color: #bbb;
-  max-width: 400px;
-}
-
-/* ========= EBOOK ========= */
-.ebook {
-  margin-top: 2rem;
-  width: 170px;
-  height: 250px;
-  border: 1px solid rgba(255,215,0,0.7);
-  border-radius: 10px;
-  background: linear-gradient(145deg, #111, #000);
-  box-shadow: 
-    0 0 15px rgba(255,215,0,0.4),
-    0 0 40px rgba(255,215,0,0.2);
-}
-
-/* ========= VAULT ========= */
+/* ========= CONTENEDOR ========= */
 .vault {
-  margin-top: 2.5rem;
   width: 100%;
-  max-width: 400px;
-  padding: 2rem;
-  background: rgba(20,20,20,0.6);
-  border: 1px solid rgba(255,215,0,0.6);
-  border-radius: 16px;
-  backdrop-filter: blur(14px);
+  max-width: 420px;
+  padding: 2.5rem 2rem;
+  border-radius: 18px;
+  backdrop-filter: blur(18px);
+  background: rgba(255,255,255,0.03);
+  border: 2px solid transparent;
+  border-image: linear-gradient(to bottom, #cf9730, #f6e27a, #fef1a2, #f0d64d, #fcf6ba, #d19a39, #8a6e2f) 1;
+  text-align: center;
   position: relative;
   z-index: 1;
 }
 
-/* Glow más fuerte */
-.vault::before {
-  content: "";
-  position: absolute;
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(circle, rgba(255,215,0,0.4), transparent 70%);
-  top: -60px;
-  left: 50%;
-  transform: translateX(-50%);
-  filter: blur(80px);
-  z-index: -1;
+/* ========= TÍTULO ORO 24K ========= */
+h1 {
+  font-family: 'Cinzel', serif;
+  font-size: 2.6rem;
+  letter-spacing: 2px;
+  margin-bottom: 1.5rem;
+
+  background: linear-gradient(to bottom, #cf9730 0%, #f6e27a 30%, #fef1a2 45%, #f0d64d 50%, #fcf6ba 55%, #d19a39 70%, #8a6e2f 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  filter: drop-shadow(0px 2px 2px rgba(0,0,0,0.8));
+
+  text-shadow:
+    0 0 2px rgba(255,215,0,0.4),
+    0 0 6px rgba(255,215,0,0.3);
+}
+
+/* ========= EBOOK ========= */
+.ebook {
+  width: 160px;
+  height: 240px;
+  margin: 0 auto 1.5rem;
+  border-radius: 10px;
+  background: #0a0a0a;
+  border: 2px solid;
+  border-image: linear-gradient(to bottom, #cf9730, #f6e27a, #fef1a2, #f0d64d, #fcf6ba, #d19a39, #8a6e2f) 1;
+  box-shadow: 
+    0 0 10px rgba(246,226,122,0.3),
+    0 0 30px rgba(246,226,122,0.15);
+}
+
+/* ========= TEXTO ========= */
+.subtitle {
+  font-size: 0.9rem;
+  color: #cfcfcf;
+  margin-bottom: 2rem;
 }
 
 /* ========= FORM ========= */
@@ -145,9 +108,9 @@ form {
 input {
   background: transparent;
   border: none;
-  border-bottom: 1px solid rgba(255,215,0,0.6);
-  padding: 0.7rem 0;
-  color: #fff;
+  border-bottom: 1px solid rgba(246,226,122,0.6);
+  padding: 0.6rem 0;
+  color: #f5f5f5;
   font-size: 0.9rem;
 }
 
@@ -158,82 +121,69 @@ input::placeholder {
 
 input:focus {
   outline: none;
-  border-bottom: 1px solid #ffd700;
+  border-bottom: 1px solid #f6e27a;
 }
 
-/* ========= BOTÓN ORO VIVO ========= */
+/* ========= BOTÓN ORO ========= */
 button {
   margin-top: 1rem;
-  padding: 1rem;
-  background: linear-gradient(90deg, #ffd700, #ffcc00, #ffd700);
-  border: none;
-  color: #000;
-  font-weight: 900;
+  padding: 0.9rem;
+  font-weight: 700;
+  font-size: 0.85rem;
   letter-spacing: 1.5px;
-  border-radius: 40px;
+  border-radius: 30px;
+  border: none;
   cursor: pointer;
-  transition: 0.3s ease;
-  box-shadow: 
-    0 0 10px rgba(255,215,0,0.6),
-    inset 0 0 5px rgba(255,255,255,0.5);
+  transition: all 0.3s ease;
+
+  background: linear-gradient(to bottom, #cf9730 0%, #f6e27a 30%, #fef1a2 45%, #f0d64d 50%, #fcf6ba 55%, #d19a39 70%, #8a6e2f 100%);
+  color: #000;
+
+  box-shadow:
+    0 2px 5px rgba(0,0,0,0.6),
+    0 0 10px rgba(246,226,122,0.4);
 }
 
 button:hover {
-  background: linear-gradient(90deg, #fff2a8, #ffd700, #fff2a8);
-  box-shadow: 
-    0 0 25px rgba(255,215,0,1),
-    0 0 50px rgba(255,215,0,0.6);
-  transform: scale(1.03);
-}
-
-/* ========= SOCIAL PROOF ========= */
-.social-proof {
-  margin-top: 1.5rem;
-  font-size: 0.8rem;
-  color: #888;
-  text-align: center;
+  transform: scale(1.05);
+  box-shadow:
+    0 5px 15px rgba(246,226,122,0.7),
+    0 0 30px rgba(246,226,122,0.5);
 }
 
 /* ========= RESPONSIVE ========= */
 @media(min-width: 768px) {
   h1 {
-    font-size: 4.5rem;
-  }
-
-  .subtitle {
-    font-size: 1.1rem;
+    font-size: 3.8rem;
   }
 
   .ebook {
-    width: 220px;
-    height: 320px;
+    width: 200px;
+    height: 300px;
   }
 }
+
 </style>
 </head>
 
 <body>
 
-<header>EL 1% NO COMPITE, DOMINA</header>
+<div class="vault">
 
-<section class="hero">
   <h1>CÓDIGO ALFA VIP</h1>
+
   <div class="ebook"></div>
+
   <p class="subtitle">
     El Manifiesto del 1%: Deja de competir y empieza a liderar.
   </p>
-</section>
 
-<section class="vault">
   <form>
     <input type="text" placeholder="NOMBRE" required>
     <input type="email" placeholder="EMAIL PRIVADO" required>
-    <button type="submit">RECLAMAR ACCESO VIP</button>
+    <button type="submit">DESCARGAR CÓDIGO ALFA</button>
   </form>
-</section>
 
-<div class="social-proof">
-  Únete a los +4,500 hombres que ya dominan su psicología.
 </div>
 
 </body>
