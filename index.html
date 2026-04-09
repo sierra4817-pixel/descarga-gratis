@@ -3,16 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CÓDIGO ALFA VIP | El Manifiesto del 1%</title>
+    <title>CÓDIGO ALFA VIP | La Psicología del 1%</title>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --oro: #C5A059;
-            --oro-dark: #967B45;
-            --negro: #000000;
+            /* PALETA DORADO NIVEL DIOS */
+            --oro-puro: #FFD700; /* Oro brillante base */
+            --oro-metalico: #C5A059; /* Oro viejo para contraste */
+            --oro-blanco: #FFFACD; /* Para brillos extremos */
+            --oro-sombra: #967B45; /* Oro oscuro para profundidad */
+            --negro-absoluto: #000000;
             --gris-oscuro: #0a0a0a;
             --blanco: #ffffff;
             --texto: #e0e0e0;
+            
+            /* Degradado Metálico Complejo */
+            --gradient-oro: linear-gradient(135deg, #bf953f 0%, #fcf6ba 20%, #b38728 40%, #fcf6ba 60%, #bf953f 80%, #aa771c 100%);
+            --gradient-oro-btn: linear-gradient(45deg, #aa771c 0%, #fcf6ba 50%, #aa771c 100%);
         }
 
         /* Suavizado de scroll */
@@ -20,7 +27,7 @@
 
         body {
             font-family: 'Roboto', sans-serif;
-            background-color: var(--negro);
+            background-color: var(--negro-absoluto);
             color: var(--texto);
             margin: 0;
             line-height: 1.7;
@@ -32,20 +39,36 @@
             letter-spacing: 2px;
             color: var(--blanco);
             text-wrap: balance;
+            /* Sombra de texto dorada sutil para h1 y h2 */
+            text-shadow: 0 2px 4px rgba(197, 160, 89, 0.3);
         }
 
-        /* Hero Section */
+        /* Hero Section - Aumentado el brillo y la sombra dorada inferior */
         .hero {
             padding: 140px 20px;
             text-align: center;
-            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.95)), 
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.95)), 
                         url('https://images.unsplash.com/photo-1554469384-e58fac16e23a?q=80&w=1974&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
-            border-bottom: 2px solid var(--oro);
+            /* Borde inferior con degradado metálico */
+            border-bottom: 3px solid transparent;
+            border-image: var(--gradient-oro) 1;
+            /* Resplandor dorado inferior */
+            box-shadow: 0 10px 50px rgba(197, 160, 89, 0.2);
         }
 
-        .gold { color: var(--oro); }
+        /* Dorado Metálico para texto específico */
+        .gold {
+            background: var(--gradient-oro);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+            font-weight: 700;
+            /* Brillo externo en el texto dorado */
+            filter: drop-shadow(0 0 5px rgba(252, 246, 186, 0.5));
+        }
 
         .headline {
             font-size: clamp(2.5rem, 8vw, 4.5rem);
@@ -61,25 +84,51 @@
             font-weight: 300;
         }
 
+        /* Botón CTA - Degradado metálico con efecto de brillo al pasar el mouse */
         .cta-btn {
             display: inline-block;
-            background: var(--oro);
+            background: var(--gradient-oro-btn);
             color: black;
             padding: 22px 55px;
             text-decoration: none;
             font-weight: 700;
             font-family: 'Oswald', sans-serif;
             font-size: 1.3rem;
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
             border-radius: 2px;
-            box-shadow: 0 0 25px rgba(197, 160, 89, 0.3);
+            /* Super resplandor dorado */
+            box-shadow: 0 0 30px rgba(197, 160, 89, 0.6), inset 0 0 10px rgba(255, 250, 205, 0.5);
             text-transform: uppercase;
+            border: 1px solid var(--oro-blanco);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Efecto de 'barrido de luz' en el botón */
+        .cta-btn::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(to bottom right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0) 100%);
+            transform: rotate(45deg);
+            transition: all 0.6s ease;
+            opacity: 0;
         }
 
         .cta-btn:hover {
-            transform: translateY(-3px);
-            background: var(--blanco);
-            box-shadow: 0 10px 30px rgba(197, 160, 89, 0.5);
+            transform: translateY(-5px) scale(1.03);
+            background: var(--gradient-oro); /* Invertir degradado */
+            box-shadow: 0 15px 50px rgba(197, 160, 89, 0.8), inset 0 0 15px rgba(255, 250, 205, 0.7);
+            color: #000;
+        }
+
+        .cta-btn:hover::after {
+            opacity: 1;
+            left: 100%;
+            top: 100%;
         }
 
         /* Secciones */
@@ -89,15 +138,20 @@
             margin: 0 auto;
         }
 
+        /* Caja de Cita - Borde y resplandor intensificados */
         .quote-box {
             background: var(--gris-oscuro);
             padding: 50px;
-            border-left: 5px solid var(--oro);
+            /* Borde izquierdo con degradado metálico intensificado */
+            border-left: 5px solid transparent;
+            border-image: linear-gradient(to bottom, #fcf6ba, #aa771c) 1;
             font-style: italic;
             font-size: 1.4rem;
             margin-bottom: 80px;
             color: var(--blanco);
-            box-shadow: 10px 10px 30px rgba(0,0,0,0.5);
+            /* Sombra proyectada dorada */
+            box-shadow: 15px 15px 40px rgba(0,0,0,0.7), 0 0 20px rgba(197, 160, 89, 0.15);
+            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
         }
 
         /* Grid de Capítulos */
@@ -107,25 +161,51 @@
             gap: 35px;
         }
 
+        /* Tarjetas - Efecto de borde dorado neón al pasar el mouse */
         .card {
-            background: #0f0f0f;
+            background: #080808; /* Más negro */
             padding: 45px;
             border: 1px solid #1a1a1a;
-            transition: all 0.4s ease;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
             display: flex;
             flex-direction: column;
+            position: relative;
         }
 
         .card:hover { 
-            border-color: var(--oro);
-            transform: translateY(-5px);
-            background: #151515;
+            /* Borde dorado metálico */
+            border-color: transparent;
+            border-image: var(--gradient-oro) 1;
+            transform: translateY(-8px);
+            background: #101010;
+            /* Resplandor externo dorado */
+            box-shadow: 0 15px 40px rgba(197, 160, 89, 0.25);
+        }
+        
+        /* Brillo sutil en la esquina superior de la tarjeta al hacer hover */
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 0% 0%, rgba(252, 246, 186, 0.1) 0%, rgba(0,0,0,0) 50%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        
+        .card:hover::before {
+            opacity: 1;
         }
 
         .card h3 { 
-            color: var(--oro); 
+            /* Título de la tarjeta con dorado metálico */
+            background: var(--gradient-oro);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
             margin-top: 0;
             font-size: 1.5rem;
+            filter: drop-shadow(0 1px 1px rgba(0,0,0,0.5));
         }
 
         /* Lista de Puntos Clave */
@@ -143,18 +223,48 @@
             font-size: 1.1rem;
         }
 
+        /* Checkmark dorado brillante */
         .feature-list li::before {
             content: "✓";
-            color: var(--oro);
+            color: var(--oro-puro);
             margin-right: 20px;
             font-weight: bold;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
+            /* Brillo en el checkmark */
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
         }
+
+        /* Caja de Compra Final - Ultra Dorada */
+        .final-buy-box {
+            text-align: center; 
+            margin-top: 80px; 
+            padding: 70px 30px; 
+            background: #050505; 
+            /* Borde completo metálico degradado */
+            border: 2px solid transparent;
+            border-image: var(--gradient-oro) 1;
+            /* Gran resplandor dorado de fondo */
+            box-shadow: 0 0 60px rgba(197, 160, 89, 0.3), inset 0 0 20px rgba(197, 160, 89, 0.1);
+            position: relative;
+        }
+        
+        /* Brillo central de fondo en la caja de compra */
+        .final-buy-box::before {
+            content: '';
+            position: absolute;
+            top: 50%; left: 50%; transform: translate(-50%, -50%);
+            width: 80%; height: 80%;
+            background: radial-gradient(circle, rgba(197, 160, 89, 0.1) 0%, rgba(0,0,0,0) 70%);
+            z-index: 0;
+        }
+        
+        .final-buy-box * { position: relative; z-index: 1; }
 
         footer {
             padding: 80px 20px;
             text-align: center;
-            border-top: 1px solid #1a1a1a;
+            border-top: 1px solid transparent;
+            border-image: linear-gradient(to right, transparent, var(--oro-sombra), transparent) 1;
             font-size: 0.9rem;
             color: #777;
             background: #050505;
@@ -163,6 +273,7 @@
         @media (max-width: 600px) {
             .section { padding: 60px 20px; }
             .quote-box { padding: 30px; font-size: 1.1rem; }
+            .hero { padding: 100px 20px; }
         }
     </style>
 </head>
@@ -170,48 +281,48 @@
 
     <header class="hero">
         <h1 class="headline">CÓDIGO <span class="gold">ALFA VIP</span></h1>
-        [span_0](start_span)[span_1](start_span)<p class="subheadline">La Psicología del 1% que <span class="gold">no compite, lidera</span>[span_0](end_span)[span_1](end_span). [span_2](start_span)El manifiesto definitivo para el hombre que busca la excelencia absoluta[span_2](end_span).</p>
+        <p class="subheadline">La Psicología del 1% que <span class="gold">no compite, lidera</span>. El manifiesto definitivo para el hombre que busca la excelencia absoluta.</p>
         <a href="#comprar" class="cta-btn">Unirse al Círculo</a>
     </header>
 
     <main class="section">
         <div class="quote-box">
-            [span_3](start_span)"Al hombre moderno se le ha vendido una mentira: que debe disculparse por su ambición... La mayoría vive en silencio, compitiendo por las sobras[span_3](end_span)."
+            "Al hombre moderno se le ha vendido una mentira: que debe disculparse por su ambición... La mayoría vive en silencio, compitiendo por las sobras."
         </div>
 
         <h2 style="text-align: center; margin-bottom: 50px;">La Hoja de Ruta Táctica</h2>
-        [span_4](start_span)<p style="text-align: center; font-size: 1.2rem; margin-bottom: 50px;">Este libro deconstruye los mitos que mantienen a los hombres débiles y presenta los pilares de la élite mundial[span_4](end_span):</p>
+        <p style="text-align: center; font-size: 1.2rem; margin-bottom: 50px;">Este libro deconstruye los mitos que mantienen a los hombres débiles y presenta los pilares de la élite mundial:</p>
         
         <div class="grid">
             <div class="card">
                 <h3>Capítulo 1: El Despertar</h3>
-                [span_5](start_span)<p>Quema el mapa que te dieron al nacer[span_5](end_span). [span_6](start_span)[span_7](start_span)Pasa de ser un "Participante" que reacciona a ser un "Arquitecto" que diseña su realidad[span_6](end_span)[span_7](end_span).</p>
+                <p>Quema el mapa que te dieron al nacer. Pasa de ser un "Participante" que reacciona a ser un "Arquitecto" que diseña su realidad.</p>
             </div>
             <div class="card">
                 <h3>Capítulo 2: Disciplina</h3>
-                [span_8](start_span)<p>La motivación es una mentira[span_8](end_span). [span_9](start_span)[span_10](start_span)Necesitas Ingeniería del Comportamiento y rituales de mañana en "Modo Ofensivo"[span_9](end_span)[span_10](end_span).</p>
+                <p>La motivación es una mentira. Necesitas Ingeniería del Comportamiento y rituales de mañana en "Modo Ofensivo".</p>
             </div>
             <div class="card">
                 <h3>Capítulo 3: Riqueza</h3>
-                [span_11](start_span)<p>El dinero es un amplificador[span_11](end_span). [span_12](start_span)Aprende a ser su comandante y no su esclavo[span_12](end_span). [span_13](start_span)Entiende que tú eres el activo principal[span_13](end_span).</p>
+                <p>El dinero es un amplificador. Aprende a ser su comandante y no su esclavo. Entiende que tú eres el activo principal.</p>
             </div>
             <div class="card">
                 <h3>Capítulo 4: Presencia</h3>
-                [span_14](start_span)<p>Domina el silencio estratégico[span_14](end_span). [span_15](start_span)El poder real es una fuerza gravitacional que no necesita pedir atención[span_15](end_span).</p>
+                <p>Domina el silencio estratégico. El poder real es una fuerza gravitacional que no necesita pedir atención.</p>
             </div>
         </div>
 
         <h2 style="margin-top: 100px; text-align: center;">Lo que vas a dominar</h2>
         <ul class="feature-list">
-            [span_16](start_span)[span_17](start_span)<li><span><strong>Monopolio Personal:</strong> Deja de ser una mercancía intercambiable y haz que la competencia sea irrelevante[span_16](end_span)[span_17](end_span).</span></li>
-            [span_18](start_span)[span_19](start_span)<li><span><strong>Autoimagen de Élite:</strong> Ajusta tu termostato mental para que el éxito sea el resultado inevitable de tu identidad[span_18](end_span)[span_19](end_span).</span></li>
-            [span_20](start_span)[span_21](start_span)<li><span><strong>Silencio Estratégico:</strong> Aprende a ocupar espacio en la mente ajena sin decir una sola palabra[span_20](end_span)[span_21](end_span).</span></li>
-            [span_22](start_span)[span_23](start_span)<li><span><strong>Quemar las Naves:</strong> Elimina mentalmente la opción del fracaso y comprométete con tu victoria absoluta[span_22](end_span)[span_23](end_span).</span></li>
+            <li><span><strong>Monopolio Personal:</strong> Deja de ser una mercancía intercambiable y haz que la competencia sea irrelevante.</span></li>
+            <li><span><strong>Autoimagen de Élite:</strong> Ajusta tu termostato mental para que el éxito sea el resultado inevitable de tu identidad.</span></li>
+            <li><span><strong>Silencio Estratégico:</strong> Aprende a ocupar espacio en la mente ajena sin decir una sola palabra.</span></li>
+            <li><span><strong>Quemar las Naves:</strong> Elimina mentalmente la opción del fracaso y comprométete con tu victoria absoluta.</span></li>
         </ul>
 
-        <div style="text-align: center; margin-top: 80px; padding: 60px 20px; background: #050505; border: 1px solid var(--oro-dark);" id="comprar">
+        <div class="final-buy-box" id="comprar">
             <h2 class="gold">¿ESTÁS LISTO PARA EL SIGUIENTE NIVEL?</h2>
-            [span_24](start_span)[span_25](start_span)<p style="font-size: 1.2rem;">El 1% no busca superar a la competencia; busca hacerla irrelevante[span_24](end_span)[span_25](end_span).</p>
+            <p style="font-size: 1.2rem;">El 1% no busca superar a la competencia; busca hacerla irrelevante.</p>
             <br>
             <a href="TU_LINK_HOTMART" class="cta-btn">Descargar Código Alfa VIP</a>
             <p style="margin-top: 25px; font-size: 0.8rem; color: #555;">Acceso inmediato tras la compra. Garantía de 7 días.</p>
@@ -219,8 +330,8 @@
     </main>
 
     <footer>
-        <p>&copy; [span_26](start_span)2026 CÓDIGO ALFA VIP - Albert S.[span_26](end_span)</p>
-        [span_27](start_span)<p>El 1% no compite; la competencia es para los que no tienen identidad[span_27](end_span).</p>
+        <p>&copy; 2026 CÓDIGO ALFA VIP - Albert S.</p>
+        <p>El 1% no compite; la competencia es para los que no tienen identidad.</p>
     </footer>
 
 </body>
