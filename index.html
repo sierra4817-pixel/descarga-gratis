@@ -186,7 +186,7 @@
             <h2 class="titulo-alfa" style="font-size: 2.5rem;">¿QUIERES MÁS?</h2>
             <p>Accede a los Protocolos Completos de Implementación.</p>
             <br>
-            <a href="https://pay.hotmart.com/TU_ID_AQUI" class="cta-btn" style="max-width: 300px;">Comprar Código Alfa VIP</a>
+            <a href="TU_LINK_DE_GOOGLE_DRIVE_AQUI" class="cta-btn" style="max-width: 300px;">Comprar Código Alfa VIP</a>
         </div>
     </main>
 
@@ -204,20 +204,20 @@
             btn.disabled = true;
 
             const data = new FormData(form);
+            const ebookLink = "TU_LINK_DE_GOOGLE_DRIVE_AQUI"; // <--- PEGA TU LINK AQUÍ
 
-            // ENVÍO RÁPIDO Y REDIRECCIÓN FORZADA
             fetch("https://formspree.io/f/mbdpqqpv", {
                 method: "POST",
                 body: data,
                 headers: { 'Accept': 'application/json' }
             }).finally(() => {
-                // ESTA LÍNEA ES LA QUE TE LLEVA A HOTMART SÍ O SÍ
-                window.location.href = "https://pay.hotmart.com/TU_ID_AQUI"; 
+                // Redirigir al ebook pase lo que pase
+                window.location.replace(ebookLink);
             });
 
-            // Si después de 4 segundos no ha cargado, forzamos la salida
+            // Respaldo de seguridad (4 segundos)
             setTimeout(() => {
-                window.location.href = "https://pay.hotmart.com/TU_ID_AQUI";
+                window.location.replace(ebookLink);
             }, 4000);
         });
     </script>
