@@ -155,16 +155,16 @@
         <div class="optin-container">
             <p style="margin-bottom: 20px; font-weight: 700; letter-spacing: 1px;">DESCARGA EL MANIFIESTO GRATIS</p>
             
-            <form action="https://formspree.io/f/mbdpqqpv" method="POST">
+            <form action="https://formspree.io/f/mbdpqqpv" method="POST" id="alfa-form">
                 
-                <input type="hidden" name="_next" value="TU_LINK_AQUI">
+                <input type="hidden" name="_next" value="https://codigoalfa.vip/gracias">
                 
                 <input type="text" name="_gotcha" style="display:none">
 
                 <input type="text" name="Nombre" placeholder="Tu Nombre Completo" required>
                 <input type="email" name="Email" placeholder="Tu Email Privado" required>
                 
-                <button type="submit" class="cta-btn">Acceder al Manifiesto</button>
+                <button type="submit" class="cta-btn" id="submit-btn">Acceder al Manifiesto</button>
             </form>
             
             <p style="font-size: 0.7rem; color: #666; margin-top: 15px;">Tu privacidad es sagrada. Cero Spam.</p>
@@ -204,6 +204,18 @@
     <footer>
         <p>&copy; 2026 CÓDIGO ALFA VIP - Albert S.</p>
     </footer>
+
+    <script>
+        // Mejora UX: Cambia el texto del botón al enviar
+        const form = document.getElementById('alfa-form');
+        const btn = document.getElementById('submit-btn');
+
+        form.onsubmit = function() {
+            btn.innerHTML = "CARGANDO ACCESO...";
+            btn.style.opacity = "0.7";
+            btn.style.cursor = "not-allowed";
+        };
+    </script>
 
 </body>
 </html>
