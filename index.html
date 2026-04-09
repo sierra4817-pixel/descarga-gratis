@@ -15,13 +15,46 @@
         }
         body { font-family: 'Roboto', sans-serif; background-color: var(--negro-absoluto); color: #f0f0f0; margin: 0; text-align: center; line-height: 1.7; }
         h1, h2, h3 { font-family: 'Oswald', sans-serif; text-transform: uppercase; color: var(--blanco-nitido); }
+        
         .hero { padding: 100px 20px; background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1554469384-e58fac16e23a?q=80&w=1974&auto=format&fit=crop'); background-size: cover; border-bottom: 3px solid var(--oro-real); }
         .titulo-alfa { font-size: clamp(2.5rem, 8vw, 5rem); background: var(--oro-gradiente); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin: 0; }
+        
         .optin-container { max-width: 450px; margin: 30px auto; background: rgba(255,255,255,0.05); padding: 30px; border: 1px solid var(--oro-real); backdrop-filter: blur(10px); }
         input { width: 100%; padding: 15px; margin-bottom: 15px; background: #111; border: 1px solid #333; color: white; box-sizing: border-box; }
-        .cta-btn { display: inline-block; width: 100%; background: var(--oro-gradiente); color: #000; padding: 20px; text-decoration: none; font-weight: 700; font-family: 'Oswald', sans-serif; border: none; cursor: pointer; text-transform: uppercase; }
+        
+        /* BOTÓN MEJORADO Y CENTRADO */
+        .cta-btn { 
+            display: block; 
+            width: 100%; 
+            max-width: 300px; 
+            margin: 0 auto; 
+            background: var(--oro-gradiente); 
+            color: #000; 
+            padding: 20px; 
+            text-decoration: none; 
+            font-weight: 700; 
+            font-family: 'Oswald', sans-serif; 
+            border: none; 
+            cursor: pointer; 
+            text-transform: uppercase;
+            transition: transform 0.3s ease;
+        }
+        .cta-btn:hover { transform: scale(1.03); }
+
         .section { padding: 80px 20px; max-width: 900px; margin: 0 auto; }
         .card { background: #050505; padding: 30px; border: 1px solid #1a1a1a; margin-bottom: 20px; }
+        
+        /* SECCIÓN COMPRAR CENTRADA */
+        #comprar { 
+            margin-top: 50px; 
+            padding: 40px; 
+            border: 2px solid var(--oro-real); 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center;
+        }
+
         footer { padding: 40px; color: #555; font-size: 0.8rem; }
     </style>
 </head>
@@ -46,11 +79,11 @@
             <p>Deja de ser un participante en la vida de otros y conviértete en el arquitecto de tu propio destino.</p>
         </div>
 
-        <div id="comprar" style="margin-top: 50px; padding: 40px; border: 2px solid var(--oro-real);">
+        <div id="comprar">
             <h2 style="margin-top:0;">¿QUIERES MÁS?</h2>
             <p>Domina tu mente con los <b>Protocolos de Sabiduría Estoica</b>. El complemento táctico para el 1%.</p>
             <br>
-            <a href="https://go.hotmart.com/R105307128Q" class="cta-btn" style="max-width: 300px;">Adquirir Protocolo VIP</a>
+            <a href="https://go.hotmart.com/R105307128Q" class="cta-btn">Adquirir Protocolo VIP</a>
             <p style="font-size:0.7rem; margin-top:10px;">Garantía de 7 días • 100% Calificaciones Positivas</p>
         </div>
     </main>
