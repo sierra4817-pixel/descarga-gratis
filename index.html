@@ -90,29 +90,23 @@
 
         input:focus { border-color: var(--oro-real); outline: none; }
 
-        /* PEGA AQUÍ EL BLOQUE NUEVO */
-        .txt-descarga-vip {
-            font-family: 'Oswald', sans-serif;
-            font-size: 2.2rem; 
-            font-weight: 700;
-            line-height: 1.2;
-            letter-spacing: 3px;
-            margin-bottom: 25px;
-            text-align: center;
-            text-transform: uppercase;
-            background: var(--oro-gradiente);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.5));
-        }
-
-        @media (max-width: 600px) {
-            .txt-descarga-vip { font-size: 1.6rem; letter-spacing: 2px; }
-        }
-        /* FIN DEL BLOQUE NUEVO */
-
         .cta-btn {
+            display: inline-block;
+            width: 100%;
+            background: var(--oro-gradiente);
+            color: #000;
+            padding: 20px;
+            text-decoration: none;
+            font-weight: 700;
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.2rem;
+            transition: 0.4s;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+
+        .cta-btn:hover { transform: scale(1.02); filter: brightness(1.2); }
 
         /* SECCIONES CONTENIDO */
         .section { padding: 100px 20px; max-width: 1000px; margin: 0 auto; }
@@ -139,8 +133,7 @@
         <p class="subheadline">El Manifiesto del 1%: <span style="color:var(--oro-real)">No compitas, lidera</span></p>
         
         <div class="optin-container">
-            <p class="txt-descarga-vip">DESCARGA EL MANIFIESTO GRATIS</p> 
-            
+            <p style="margin-bottom: 20px; font-weight: 700; letter-spacing: 1px;">DESCARGA EL MANIFIESTO GRATIS</p>
             <form action="https://formspree.io/f/TU_ID_AQUI" method="POST">
                 <input type="text" name="name" placeholder="Tu Nombre Completo" required>
                 <input type="email" name="email" placeholder="Tu Email Privado" required>
@@ -175,7 +168,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 CÓDIGO ALFA VIP - A.S.</p>
+        <p>&copy; 2026 CÓDIGO ALFA VIP - Albert S.</p>
     </footer>
 
 </body>
