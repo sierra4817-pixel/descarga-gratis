@@ -38,9 +38,11 @@
         .hero {
             padding: 150px 20px;
             text-align: center;
+            /* Optimización: Fondo fijo para efecto parallax y color de respaldo */
             background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.95)), url('https://images.unsplash.com/photo-1554469384-e58fac16e23a?q=80&w=1974&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
+            background-attachment: fixed;
             border-bottom: 3px solid transparent;
             border-image: var(--oro-gradiente) 1;
             box-shadow: 0 10px 50px rgba(191, 149, 63, 0.3);
@@ -65,6 +67,24 @@
             text-transform: uppercase;
             letter-spacing: 2px;
         }
+
+        /* BARRA DE BENEFICIOS (NUEVA) */
+        .trust-bar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            padding: 25px 20px;
+            background: var(--gris-premium);
+            border-bottom: 1px solid #1a1a1a;
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .trust-item { display: flex; align-items: center; gap: 10px; }
+        .trust-icon { color: var(--oro-real); font-size: 1.2rem; }
 
         /* FORMULARIO DE CAPTACIÓN VIP */
         .optin-container {
@@ -104,6 +124,7 @@
             border: none;
             cursor: pointer;
             text-transform: uppercase;
+            text-align: center;
         }
 
         .cta-btn:hover { transform: scale(1.02); filter: brightness(1.2); }
@@ -142,6 +163,12 @@
             <p style="font-size: 0.7rem; color: #666; margin-top: 15px;">Tu privacidad es sagrada. Cero Spam.</p>
         </div>
     </header>
+
+    <section class="trust-bar">
+        <div class="trust-item"><span class="trust-icon">⚡</span> Acceso Instantáneo</div>
+        <div class="trust-item"><span class="trust-icon">🔒</span> Pago Seguro</div>
+        <div class="trust-item"><span class="trust-icon">🔥</span> +5,000 Miembros</div>
+    </section>
 
     <main class="section">
         <div class="quote-box">
