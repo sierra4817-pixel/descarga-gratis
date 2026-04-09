@@ -187,7 +187,7 @@
             <h2 class="titulo-alfa" style="font-size: 2.5rem;">¿QUIERES MÁS?</h2>
             <p>Accede a los Protocolos Completos de Implementación.</p>
             <br>
-            <a href="https://pay.hotmart.com/TU_LINK" class="cta-btn" style="max-width: 300px;">Comprar Código Alfa VIP</a>
+            <a href="https://pay.hotmart.com/TU_ID_AQUI" class="cta-btn" style="max-width: 300px;">Comprar Código Alfa VIP</a>
         </div>
     </main>
 
@@ -212,16 +212,17 @@
                 formId: 'mbdpqqpv',
                 data: data,
                 onSuccess: function() {
-                    // PON AQUÍ TU LINK DE HOTMART O EL PDF
-                    window.location.href = "https://pay.hotmart.com/TU_LINK"; 
+                    // AQUÍ PONES EL LINK AL PDF O A TU PÁGINA DE GRACIAS/VENTA
+                    window.location.href = "https://pay.hotmart.com/TU_ID_AQUI"; 
                 },
                 onError: function() {
                     btn.innerHTML = "ERROR - REINTENTAR";
                     btn.disabled = false;
-                    alert("Hubo un error. Intenta de nuevo.");
+                    alert("Hubo un error al procesar. Intenta de nuevo.");
                 }
             });
         });
     </script>
+
 </body>
 </html>
